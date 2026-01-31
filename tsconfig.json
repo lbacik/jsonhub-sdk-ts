@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["index.ts", "runtime.ts", "apis/**/*.ts", "models/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

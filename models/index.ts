@@ -72,3 +72,4 @@ export * from './UserUserResendActivation';
 export * from './UserUserResetPassword';
 export * from './UserUserSendResetPassword';
 export * from './UserUserUpdate';
+export * from './string';
