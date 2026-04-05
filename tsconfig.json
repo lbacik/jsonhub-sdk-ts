@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "declaration": true,
+    "target": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "noEmit": true,
-    "strict": false,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "outDir": "dist",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "include": ["index.ts", "runtime.ts", "apis/**/*.ts", "models/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }

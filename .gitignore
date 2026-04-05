@@ -1,3 +1,4 @@
-dist/
-node_modules/
-.idea/
+wwwroot/*.js
+node_modules
+typings
+dist
