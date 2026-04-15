@@ -1,29 +1,22 @@
 
-# Oauth2JsonhalOauth2Write
-
+# ApiDefinitionsGetCollection200ResponseEmbeddedAnyOf
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
-`grantType` | string
-`clientId` | string
-`clientSecret` | string
+`item` | [Array&lt;DefinitionJsonhalDefinitionRead&gt;](DefinitionJsonhalDefinitionRead.md)
 
 ## Example
 
 ```typescript
-import type { Oauth2JsonhalOauth2Write } from 'jsonhub-api-sdk'
+import type { ApiDefinitionsGetCollection200ResponseEmbeddedAnyOf } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
-  "grantType": null,
-  "clientId": null,
-  "clientSecret": null,
-} satisfies Oauth2JsonhalOauth2Write
+  "item": null,
+} satisfies ApiDefinitionsGetCollection200ResponseEmbeddedAnyOf
 
 console.log(example)
 
@@ -32,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as Oauth2JsonhalOauth2Write
+const exampleParsed = JSON.parse(exampleJSON) as ApiDefinitionsGetCollection200ResponseEmbeddedAnyOf
 console.log(exampleParsed)
 ```
 

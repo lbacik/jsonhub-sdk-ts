@@ -1,6 +1,6 @@
 # EntityApi
 
-All URIs are relative to *http://api.jsonhub.orb.local*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -26,11 +26,11 @@ Retrieves the collection of entity resources.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk';
-import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -93,7 +93,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -118,11 +118,11 @@ Removes the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk';
-import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -179,7 +179,7 @@ example().catch(console.error);
 
 ## apiEntitiesIdGet
 
-> EntityJsonldEntityReadEntityReadParent apiEntitiesIdGet(id)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdGet(id)
 
 Retrieves a entity resource.
 
@@ -191,11 +191,11 @@ Retrieves a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk';
-import type { ApiEntitiesIdGetRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiEntitiesIdGetRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -228,7 +228,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**EntityJsonldEntityReadEntityReadParent**](EntityJsonldEntityReadEntityReadParent.md)
+[**EntityJsonhalEntityReadEntityReadParent**](EntityJsonhalEntityReadEntityReadParent.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -251,7 +251,7 @@ example().catch(console.error);
 
 ## apiEntitiesIdPatch
 
-> EntityJsonldEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdate)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdate)
 
 Updates the entity resource.
 
@@ -263,11 +263,11 @@ Updates the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk';
-import type { ApiEntitiesIdPatchRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiEntitiesIdPatchRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -303,7 +303,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**EntityJsonldEntityReadEntityReadParent**](EntityJsonldEntityReadEntityReadParent.md)
+[**EntityJsonhalEntityReadEntityReadParent**](EntityJsonhalEntityReadEntityReadParent.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -320,16 +320,16 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | entity resource updated |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |
+| **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiEntitiesPost
 
-> EntityJsonldEntityReadEntityReadParent apiEntitiesPost(entityJsonldEntityCreate)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesPost(entityJsonhalEntityCreate)
 
 Creates a entity resource.
 
@@ -341,11 +341,11 @@ Creates a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk';
-import type { ApiEntitiesPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiEntitiesPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -353,8 +353,8 @@ async function example() {
   const api = new EntityApi(config);
 
   const body = {
-    // EntityJsonldEntityCreate | The new entity resource
-    entityJsonldEntityCreate: ...,
+    // EntityJsonhalEntityCreate | The new entity resource
+    entityJsonhalEntityCreate: ...,
   } satisfies ApiEntitiesPostRequest;
 
   try {
@@ -374,11 +374,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **entityJsonldEntityCreate** | [EntityJsonldEntityCreate](EntityJsonldEntityCreate.md) | The new entity resource | |
+| **entityJsonhalEntityCreate** | [EntityJsonhalEntityCreate](EntityJsonhalEntityCreate.md) | The new entity resource | |
 
 ### Return type
 
-[**EntityJsonldEntityReadEntityReadParent**](EntityJsonldEntityReadEntityReadParent.md)
+[**EntityJsonhalEntityReadEntityReadParent**](EntityJsonhalEntityReadEntityReadParent.md)
 
 ### Authorization
 
@@ -386,8 +386,8 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -395,8 +395,8 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **201** | entity resource created |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
 | **403** | Forbidden |  -  |
+| **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

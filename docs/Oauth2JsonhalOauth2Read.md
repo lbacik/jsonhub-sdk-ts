@@ -13,7 +13,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { Oauth2JsonhalOauth2Read } from 'jsonhub-sdk'
+import type { Oauth2JsonhalOauth2Read } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -1,6 +1,6 @@
 # Oauth2Api
 
-All URIs are relative to *http://api.jsonhub.orb.local*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ All URIs are relative to *http://api.jsonhub.orb.local*
 
 ## apiOauth2tokenPost
 
-> Oauth2JsonldOauth2Read apiOauth2tokenPost(oauth2JsonldOauth2Write)
+> Oauth2JsonhalOauth2Read apiOauth2tokenPost(oauth2JsonhalOauth2Write)
 
 Retrieve an OAuth2 Token
 
@@ -22,16 +22,16 @@ This endpoint issues an OAuth2 token using your client credentials.
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-sdk';
-import type { ApiOauth2tokenPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiOauth2tokenPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const api = new Oauth2Api();
 
   const body = {
-    // Oauth2JsonldOauth2Write | The new oauth2 resource
-    oauth2JsonldOauth2Write: ...,
+    // Oauth2JsonhalOauth2Write | The new oauth2 resource
+    oauth2JsonhalOauth2Write: ...,
   } satisfies ApiOauth2tokenPostRequest;
 
   try {
@@ -51,11 +51,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **oauth2JsonldOauth2Write** | [Oauth2JsonldOauth2Write](Oauth2JsonldOauth2Write.md) | The new oauth2 resource | |
+| **oauth2JsonhalOauth2Write** | [Oauth2JsonhalOauth2Write](Oauth2JsonhalOauth2Write.md) | The new oauth2 resource | |
 
 ### Return type
 
-[**Oauth2JsonldOauth2Read**](Oauth2JsonldOauth2Read.md)
+[**Oauth2JsonhalOauth2Read**](Oauth2JsonhalOauth2Read.md)
 
 ### Authorization
 
@@ -63,8 +63,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details

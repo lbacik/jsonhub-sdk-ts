@@ -6,12 +6,12 @@
 
 Name | Type
 ------------ | -------------
-`self` | [ApiDefinitionsGetCollection200Response1LinksSelf](ApiDefinitionsGetCollection200Response1LinksSelf.md)
+`self` | [ApiDefinitionsGetCollection200ResponseLinksSelf](ApiDefinitionsGetCollection200ResponseLinksSelf.md)
 
 ## Example
 
 ```typescript
-import type { DefinitionJsonhalDefinitionReadLinks } from 'jsonhub-sdk'
+import type { DefinitionJsonhalDefinitionReadLinks } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

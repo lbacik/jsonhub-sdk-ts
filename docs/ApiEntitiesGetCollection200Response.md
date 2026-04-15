@@ -6,22 +6,22 @@
 
 Name | Type
 ------------ | -------------
-`hydraMember` | [Array&lt;EntityJsonldEntityReadEntityReadParent&gt;](EntityJsonldEntityReadEntityReadParent.md)
-`hydraTotalItems` | number
-`hydraView` | [ApiDefinitionsGetCollection200ResponseHydraView](ApiDefinitionsGetCollection200ResponseHydraView.md)
-`hydraSearch` | [ApiDefinitionsGetCollection200ResponseHydraSearch](ApiDefinitionsGetCollection200ResponseHydraSearch.md)
+`embedded` | [ApiEntitiesGetCollection200ResponseEmbedded](ApiEntitiesGetCollection200ResponseEmbedded.md)
+`totalItems` | number
+`itemsPerPage` | number
+`links` | [ApiDefinitionsGetCollection200ResponseLinks](ApiDefinitionsGetCollection200ResponseLinks.md)
 
 ## Example
 
 ```typescript
-import type { ApiEntitiesGetCollection200Response } from 'jsonhub-sdk'
+import type { ApiEntitiesGetCollection200Response } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "hydraMember": null,
-  "hydraTotalItems": null,
-  "hydraView": null,
-  "hydraSearch": null,
+  "embedded": null,
+  "totalItems": null,
+  "itemsPerPage": null,
+  "links": null,
 } satisfies ApiEntitiesGetCollection200Response
 
 console.log(example)

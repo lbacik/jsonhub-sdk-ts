@@ -18,7 +18,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityJsonapi } from 'jsonhub-sdk'
+import type { EntityJsonapi } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

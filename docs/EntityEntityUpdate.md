@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityEntityUpdate } from 'jsonhub-sdk'
+import type { EntityEntityUpdate } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

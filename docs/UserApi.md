@@ -1,6 +1,6 @@
 # UserApi
 
-All URIs are relative to *http://api.jsonhub.orb.local*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -27,11 +27,11 @@ Removes the user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUsersIdDeleteRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUsersIdDeleteRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -88,7 +88,7 @@ example().catch(console.error);
 
 ## apiUsersIdPatch
 
-> UserJsonldUserEmpty apiUsersIdPatch(id, userUserUpdate)
+> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdate)
 
 Updates the user resource.
 
@@ -100,11 +100,11 @@ Updates the user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUsersIdPatchRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUsersIdPatchRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -140,7 +140,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**UserJsonldUserEmpty**](UserJsonldUserEmpty.md)
+[**UserJsonhalUserEmpty**](UserJsonhalUserEmpty.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -157,16 +157,16 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | user resource updated |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |
+| **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersPost
 
-> UserJsonldUserRead apiUsersPost(userJsonldUserCreate)
+> UserJsonhalUserRead apiUsersPost(userJsonhalUserCreate)
 
 Creates a user resource.
 
@@ -178,16 +178,16 @@ Creates a user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUsersPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUsersPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const api = new UserApi();
 
   const body = {
-    // UserJsonldUserCreate | The new user resource
-    userJsonldUserCreate: ...,
+    // UserJsonhalUserCreate | The new user resource
+    userJsonhalUserCreate: ...,
   } satisfies ApiUsersPostRequest;
 
   try {
@@ -207,11 +207,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userJsonldUserCreate** | [UserJsonldUserCreate](UserJsonldUserCreate.md) | The new user resource | |
+| **userJsonhalUserCreate** | [UserJsonhalUserCreate](UserJsonhalUserCreate.md) | The new user resource | |
 
 ### Return type
 
-[**UserJsonldUserRead**](UserJsonldUserRead.md)
+[**UserJsonhalUserRead**](UserJsonhalUserRead.md)
 
 ### Authorization
 
@@ -219,8 +219,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -235,7 +235,7 @@ No authorization required
 
 ## apiUsersresendActivationPost
 
-> apiUsersresendActivationPost(userJsonldUserResendActivation)
+> apiUsersresendActivationPost(userJsonhalUserResendActivation)
 
 Resend activation email
 
@@ -247,16 +247,16 @@ This endpoint resends the activation email to the user.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUsersresendActivationPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUsersresendActivationPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const api = new UserApi();
 
   const body = {
-    // UserJsonldUserResendActivation | The new user resource
-    userJsonldUserResendActivation: ...,
+    // UserJsonhalUserResendActivation | The new user resource
+    userJsonhalUserResendActivation: ...,
   } satisfies ApiUsersresendActivationPostRequest;
 
   try {
@@ -276,7 +276,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userJsonldUserResendActivation** | [UserJsonldUserResendActivation](UserJsonldUserResendActivation.md) | The new user resource | |
+| **userJsonhalUserResendActivation** | [UserJsonhalUserResendActivation](UserJsonhalUserResendActivation.md) | The new user resource | |
 
 ### Return type
 
@@ -288,7 +288,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
 - **Accept**: Not defined
 
 
@@ -304,7 +304,7 @@ No authorization required
 
 ## apiUsersresetPasswordPost
 
-> apiUsersresetPasswordPost(userJsonldUserResetPassword)
+> apiUsersresetPasswordPost(userJsonhalUserResetPassword)
 
 Reset password (with token)
 
@@ -316,16 +316,16 @@ This endpoint resets the password of the user using the token sent by email.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUsersresetPasswordPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUsersresetPasswordPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const api = new UserApi();
 
   const body = {
-    // UserJsonldUserResetPassword | The new user resource
-    userJsonldUserResetPassword: ...,
+    // UserJsonhalUserResetPassword | The new user resource
+    userJsonhalUserResetPassword: ...,
   } satisfies ApiUsersresetPasswordPostRequest;
 
   try {
@@ -345,7 +345,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userJsonldUserResetPassword** | [UserJsonldUserResetPassword](UserJsonldUserResetPassword.md) | The new user resource | |
+| **userJsonhalUserResetPassword** | [UserJsonhalUserResetPassword](UserJsonhalUserResetPassword.md) | The new user resource | |
 
 ### Return type
 
@@ -357,7 +357,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
 - **Accept**: Not defined
 
 
@@ -373,7 +373,7 @@ No authorization required
 
 ## apiUserssendResetPasswordPost
 
-> apiUserssendResetPasswordPost(userJsonldUserSendResetPassword)
+> apiUserssendResetPasswordPost(userJsonhalUserSendResetPassword)
 
 Send reset password email
 
@@ -385,16 +385,16 @@ This endpoint sends a reset password email to the user.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk';
-import type { ApiUserssendResetPasswordPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiUserssendResetPasswordPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const api = new UserApi();
 
   const body = {
-    // UserJsonldUserSendResetPassword | The new user resource
-    userJsonldUserSendResetPassword: ...,
+    // UserJsonhalUserSendResetPassword | The new user resource
+    userJsonhalUserSendResetPassword: ...,
   } satisfies ApiUserssendResetPasswordPostRequest;
 
   try {
@@ -414,7 +414,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **userJsonldUserSendResetPassword** | [UserJsonldUserSendResetPassword](UserJsonldUserSendResetPassword.md) | The new user resource | |
+| **userJsonhalUserSendResetPassword** | [UserJsonhalUserSendResetPassword](UserJsonhalUserSendResetPassword.md) | The new user resource | |
 
 ### Return type
 
@@ -426,7 +426,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
 - **Accept**: Not defined
 
 

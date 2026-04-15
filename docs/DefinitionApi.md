@@ -1,6 +1,6 @@
 # DefinitionApi
 
-All URIs are relative to *http://api.jsonhub.orb.local*
+All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -26,11 +26,11 @@ Retrieves the collection of definition resources.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk';
-import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -87,7 +87,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -112,11 +112,11 @@ Removes the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk';
-import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -173,7 +173,7 @@ example().catch(console.error);
 
 ## apiDefinitionsIdGet
 
-> DefinitionJsonldDefinitionRead apiDefinitionsIdGet(id)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdGet(id)
 
 Retrieves a definition resource.
 
@@ -185,11 +185,11 @@ Retrieves a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk';
-import type { ApiDefinitionsIdGetRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdGetRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -222,7 +222,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -245,7 +245,7 @@ example().catch(console.error);
 
 ## apiDefinitionsIdPatch
 
-> DefinitionJsonldDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWrite)
 
 Updates the definition resource.
 
@@ -257,11 +257,11 @@ Updates the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk';
-import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -297,7 +297,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -314,16 +314,16 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | definition resource updated |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |
+| **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsPost
 
-> DefinitionJsonldDefinitionRead apiDefinitionsPost(definitionJsonldDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionJsonhalDefinitionWrite)
 
 Creates a definition resource.
 
@@ -335,11 +335,11 @@ Creates a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk';
-import type { ApiDefinitionsPostRequest } from 'jsonhub-sdk';
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsPostRequest } from 'jsonhub-api-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk SDK...");
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -347,8 +347,8 @@ async function example() {
   const api = new DefinitionApi(config);
 
   const body = {
-    // DefinitionJsonldDefinitionWrite | The new definition resource
-    definitionJsonldDefinitionWrite: ...,
+    // DefinitionJsonhalDefinitionWrite | The new definition resource
+    definitionJsonhalDefinitionWrite: ...,
   } satisfies ApiDefinitionsPostRequest;
 
   try {
@@ -368,11 +368,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **definitionJsonldDefinitionWrite** | [DefinitionJsonldDefinitionWrite](DefinitionJsonldDefinitionWrite.md) | The new definition resource | |
+| **definitionJsonhalDefinitionWrite** | [DefinitionJsonhalDefinitionWrite](DefinitionJsonhalDefinitionWrite.md) | The new definition resource | |
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -380,8 +380,8 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
-- **Accept**: `application/ld+json`, `application/json`, `application/hal+json`, `application/vnd.api+json`
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`
 
 
 ### HTTP response details
@@ -389,8 +389,8 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **201** | definition resource created |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
 | **403** | Forbidden |  -  |
+| **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

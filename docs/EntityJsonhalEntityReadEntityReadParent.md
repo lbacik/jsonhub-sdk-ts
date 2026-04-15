@@ -19,7 +19,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityJsonhalEntityReadEntityReadParent } from 'jsonhub-sdk'
+import type { EntityJsonhalEntityReadEntityReadParent } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

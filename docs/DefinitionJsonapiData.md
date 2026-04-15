@@ -13,7 +13,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { DefinitionJsonapiData } from 'jsonhub-sdk'
+import type { DefinitionJsonapiData } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

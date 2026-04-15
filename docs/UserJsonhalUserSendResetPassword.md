@@ -14,7 +14,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { UserJsonhalUserSendResetPassword } from 'jsonhub-sdk'
+import type { UserJsonhalUserSendResetPassword } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
