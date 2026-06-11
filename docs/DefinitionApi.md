@@ -158,7 +158,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -166,7 +166,7 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **204** | definition resource deleted |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -231,21 +231,21 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | definition resource |  -  |
-| **404** | Resource not found |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsIdPatch
 
-> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWriteJsonMergePatch)
 
 Updates the definition resource.
 
@@ -271,8 +271,8 @@ async function example() {
   const body = {
     // string | definition identifier
     id: id_example,
-    // DefinitionDefinitionWrite | The updated definition resource
-    definitionDefinitionWrite: ...,
+    // DefinitionDefinitionWriteJsonMergePatch | The updated definition resource
+    definitionDefinitionWriteJsonMergePatch: ...,
   } satisfies ApiDefinitionsIdPatchRequest;
 
   try {
@@ -293,7 +293,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | definition identifier | [Defaults to `undefined`] |
-| **definitionDefinitionWrite** | [DefinitionDefinitionWrite](DefinitionDefinitionWrite.md) | The updated definition resource | |
+| **definitionDefinitionWriteJsonMergePatch** | [DefinitionDefinitionWriteJsonMergePatch](DefinitionDefinitionWriteJsonMergePatch.md) | The updated definition resource | |
 
 ### Return type
 
@@ -306,7 +306,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -315,8 +315,8 @@ example().catch(console.error);
 | **200** | definition resource updated |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
-| **422** | Unprocessable entity |  -  |
+| **404** | Not found |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -381,7 +381,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -390,7 +390,7 @@ example().catch(console.error);
 | **201** | definition resource created |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
-| **422** | Unprocessable entity |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

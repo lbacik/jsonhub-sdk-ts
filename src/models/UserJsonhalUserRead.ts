@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * Create user
@@ -29,22 +29,22 @@ import {
 export interface UserJsonhalUserRead {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof UserJsonhalUserRead
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    id?: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserRead
      */
-    id?: string | null;
+    email: string;
     /**
      * 
-     * @type {string}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserRead
      */
-    email: string | null;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -65,9 +65,9 @@ export function UserJsonhalUserReadFromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'id': json['id'] == null ? undefined : json['id'],
         'email': json['email'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -82,9 +82,9 @@ export function UserJsonhalUserReadToJSONTyped(value?: UserJsonhalUserRead | nul
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'id': value['id'],
         'email': value['email'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

@@ -15,18 +15,27 @@
 
 import * as runtime from '../runtime';
 import type {
-  UserJsonapi,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  ErrorJsonld,
+  UserJsonhal,
   UserJsonhalUserCreate,
   UserJsonhalUserEmpty,
   UserJsonhalUserRead,
   UserJsonhalUserResendActivation,
   UserJsonhalUserResetPassword,
   UserJsonhalUserSendResetPassword,
-  UserUserUpdate,
+  UserUserUpdateJsonMergePatch,
 } from '../models/index';
 import {
-    UserJsonapiFromJSON,
-    UserJsonapiToJSON,
+    ConstraintViolationFromJSON,
+    ConstraintViolationToJSON,
+    ConstraintViolationJsonldFromJSON,
+    ConstraintViolationJsonldToJSON,
+    ErrorJsonldFromJSON,
+    ErrorJsonldToJSON,
+    UserJsonhalFromJSON,
+    UserJsonhalToJSON,
     UserJsonhalUserCreateFromJSON,
     UserJsonhalUserCreateToJSON,
     UserJsonhalUserEmptyFromJSON,
@@ -39,8 +48,8 @@ import {
     UserJsonhalUserResetPasswordToJSON,
     UserJsonhalUserSendResetPasswordFromJSON,
     UserJsonhalUserSendResetPasswordToJSON,
-    UserUserUpdateFromJSON,
-    UserUserUpdateToJSON,
+    UserUserUpdateJsonMergePatchFromJSON,
+    UserUserUpdateJsonMergePatchToJSON,
 } from '../models/index';
 
 export interface ApiUsersIdDeleteRequest {
@@ -49,7 +58,7 @@ export interface ApiUsersIdDeleteRequest {
 
 export interface ApiUsersIdPatchRequest {
     id: string;
-    userUserUpdate: UserUserUpdate;
+    userUserUpdateJsonMergePatch: UserUserUpdateJsonMergePatch;
 }
 
 export interface ApiUsersPostRequest {
@@ -138,10 +147,10 @@ export class UserApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['userUserUpdate'] == null) {
+        if (requestParameters['userUserUpdateJsonMergePatch'] == null) {
             throw new runtime.RequiredError(
-                'userUserUpdate',
-                'Required parameter "userUserUpdate" was null or undefined when calling apiUsersIdPatch().'
+                'userUserUpdateJsonMergePatch',
+                'Required parameter "userUserUpdateJsonMergePatch" was null or undefined when calling apiUsersIdPatch().'
             );
         }
 
@@ -168,7 +177,7 @@ export class UserApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: UserUserUpdateToJSON(requestParameters['userUserUpdate']),
+            body: UserUserUpdateJsonMergePatchToJSON(requestParameters['userUserUpdateJsonMergePatch']),
         };
     }
 
@@ -274,19 +283,20 @@ export class UserApi extends runtime.BaseAPI {
      * This endpoint resends the activation email to the user.
      * Resend activation email
      */
-    async apiUsersresendActivationPostRaw(requestParameters: ApiUsersresendActivationPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiUsersresendActivationPostRaw(requestParameters: ApiUsersresendActivationPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserJsonhal>> {
         const requestOptions = await this.apiUsersresendActivationPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserJsonhalFromJSON(jsonValue));
     }
 
     /**
      * This endpoint resends the activation email to the user.
      * Resend activation email
      */
-    async apiUsersresendActivationPost(requestParameters: ApiUsersresendActivationPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiUsersresendActivationPostRaw(requestParameters, initOverrides);
+    async apiUsersresendActivationPost(requestParameters: ApiUsersresendActivationPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserJsonhal> {
+        const response = await this.apiUsersresendActivationPostRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**
@@ -322,19 +332,20 @@ export class UserApi extends runtime.BaseAPI {
      * This endpoint resets the password of the user using the token sent by email.
      * Reset password (with token)
      */
-    async apiUsersresetPasswordPostRaw(requestParameters: ApiUsersresetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiUsersresetPasswordPostRaw(requestParameters: ApiUsersresetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserJsonhalUserEmpty>> {
         const requestOptions = await this.apiUsersresetPasswordPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserJsonhalUserEmptyFromJSON(jsonValue));
     }
 
     /**
      * This endpoint resets the password of the user using the token sent by email.
      * Reset password (with token)
      */
-    async apiUsersresetPasswordPost(requestParameters: ApiUsersresetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiUsersresetPasswordPostRaw(requestParameters, initOverrides);
+    async apiUsersresetPasswordPost(requestParameters: ApiUsersresetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserJsonhalUserEmpty> {
+        const response = await this.apiUsersresetPasswordPostRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**
@@ -370,19 +381,20 @@ export class UserApi extends runtime.BaseAPI {
      * This endpoint sends a reset password email to the user.
      * Send reset password email
      */
-    async apiUserssendResetPasswordPostRaw(requestParameters: ApiUserssendResetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async apiUserssendResetPasswordPostRaw(requestParameters: ApiUserssendResetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserJsonhal>> {
         const requestOptions = await this.apiUserssendResetPasswordPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.VoidApiResponse(response);
+        return new runtime.JSONApiResponse(response, (jsonValue) => UserJsonhalFromJSON(jsonValue));
     }
 
     /**
      * This endpoint sends a reset password email to the user.
      * Send reset password email
      */
-    async apiUserssendResetPasswordPost(requestParameters: ApiUserssendResetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.apiUserssendResetPasswordPostRaw(requestParameters, initOverrides);
+    async apiUserssendResetPasswordPost(requestParameters: ApiUserssendResetPasswordPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserJsonhal> {
+        const response = await this.apiUserssendResetPasswordPostRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
 }

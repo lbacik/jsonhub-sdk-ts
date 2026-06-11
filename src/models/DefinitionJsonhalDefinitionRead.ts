@@ -13,20 +13,20 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { EntityDefinitionRead } from './EntityDefinitionRead';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
-import type { EntityJsonhalDefinitionRead } from './EntityJsonhalDefinitionRead';
+    EntityDefinitionReadFromJSON,
+    EntityDefinitionReadFromJSONTyped,
+    EntityDefinitionReadToJSON,
+    EntityDefinitionReadToJSONTyped,
+} from './EntityDefinitionRead';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    EntityJsonhalDefinitionReadFromJSON,
-    EntityJsonhalDefinitionReadFromJSONTyped,
-    EntityJsonhalDefinitionReadToJSON,
-    EntityJsonhalDefinitionReadToJSONTyped,
-} from './EntityJsonhalDefinitionRead';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * 
@@ -36,22 +36,16 @@ import {
 export interface DefinitionJsonhalDefinitionRead {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof DefinitionJsonhalDefinitionRead
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    id?: string;
     /**
      * 
      * @type {string}
      * @memberof DefinitionJsonhalDefinitionRead
      */
-    id?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DefinitionJsonhalDefinitionRead
-     */
-    slug?: string | null;
+    slug?: string;
     /**
      * 
      * @type {object}
@@ -60,16 +54,22 @@ export interface DefinitionJsonhalDefinitionRead {
     jsonSchema: object;
     /**
      * 
-     * @type {EntityJsonhalDefinitionRead}
+     * @type {EntityDefinitionRead}
      * @memberof DefinitionJsonhalDefinitionRead
      */
-    parentEntity?: EntityJsonhalDefinitionRead | null;
+    parentEntity?: EntityDefinitionRead;
     /**
      * 
      * @type {boolean}
      * @memberof DefinitionJsonhalDefinitionRead
      */
     isOwnedByCurrentUser?: boolean;
+    /**
+     * 
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
+     * @memberof DefinitionJsonhalDefinitionRead
+     */
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -90,12 +90,12 @@ export function DefinitionJsonhalDefinitionReadFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'id': json['id'] == null ? undefined : json['id'],
         'slug': json['slug'] == null ? undefined : json['slug'],
         'jsonSchema': json['jsonSchema'],
-        'parentEntity': json['parentEntity'] == null ? undefined : EntityJsonhalDefinitionReadFromJSON(json['parentEntity']),
+        'parentEntity': json['parentEntity'] == null ? undefined : EntityDefinitionReadFromJSON(json['parentEntity']),
         'isOwnedByCurrentUser': json['isOwnedByCurrentUser'] == null ? undefined : json['isOwnedByCurrentUser'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -110,12 +110,12 @@ export function DefinitionJsonhalDefinitionReadToJSONTyped(value?: DefinitionJso
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'id': value['id'],
         'slug': value['slug'],
         'jsonSchema': value['jsonSchema'],
-        'parentEntity': EntityJsonhalDefinitionReadToJSON(value['parentEntity']),
+        'parentEntity': EntityDefinitionReadToJSON(value['parentEntity']),
         'isOwnedByCurrentUser': value['isOwnedByCurrentUser'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * 
@@ -29,22 +29,22 @@ import {
 export interface UserJsonhalUserResetPassword {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof UserJsonhalUserResetPassword
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    password: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserResetPassword
      */
-    password: string | null;
+    token: string;
     /**
      * 
-     * @type {string}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserResetPassword
      */
-    token: string | null;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -66,9 +66,9 @@ export function UserJsonhalUserResetPasswordFromJSONTyped(json: any, ignoreDiscr
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'password': json['password'],
         'token': json['token'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -83,9 +83,9 @@ export function UserJsonhalUserResetPasswordToJSONTyped(value?: UserJsonhalUserR
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'password': value['password'],
         'token': value['token'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

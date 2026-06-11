@@ -2,15 +2,14 @@
 # DefinitionJsonhalDefinitionWrite
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `slug` | string
 `jsonSchema` | object
 `parentEntity` | string
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -19,10 +18,10 @@ import type { DefinitionJsonhalDefinitionWrite } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "slug": null,
   "jsonSchema": null,
   "parentEntity": https://example.com/,
+  "links": null,
 } satisfies DefinitionJsonhalDefinitionWrite
 
 console.log(example)

@@ -2,17 +2,16 @@
 # EntityJsonhalEntityCreate
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `slug` | string
 `data` | object
 `definition` | string
 `parent` | string
 `_private` | boolean
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -21,12 +20,12 @@ import type { EntityJsonhalEntityCreate } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "slug": null,
   "data": null,
   "definition": https://example.com/,
   "parent": null,
   "_private": null,
+  "links": null,
 } satisfies EntityJsonhalEntityCreate
 
 console.log(example)

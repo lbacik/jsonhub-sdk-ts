@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * Change user password
@@ -29,10 +29,10 @@ import {
 export interface UserJsonhalUserEmpty {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserEmpty
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -52,7 +52,7 @@ export function UserJsonhalUserEmptyFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -67,7 +67,7 @@ export function UserJsonhalUserEmptyToJSONTyped(value?: UserJsonhalUserEmpty | n
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

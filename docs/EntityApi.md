@@ -164,7 +164,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -172,7 +172,7 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **204** | entity resource deleted |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -237,21 +237,21 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | entity resource |  -  |
-| **404** | Resource not found |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiEntitiesIdPatch
 
-> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdate)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdateJsonMergePatch)
 
 Updates the entity resource.
 
@@ -277,8 +277,8 @@ async function example() {
   const body = {
     // string | entity identifier
     id: id_example,
-    // EntityEntityUpdate | The updated entity resource
-    entityEntityUpdate: ...,
+    // EntityEntityUpdateJsonMergePatch | The updated entity resource
+    entityEntityUpdateJsonMergePatch: ...,
   } satisfies ApiEntitiesIdPatchRequest;
 
   try {
@@ -299,7 +299,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | entity identifier | [Defaults to `undefined`] |
-| **entityEntityUpdate** | [EntityEntityUpdate](EntityEntityUpdate.md) | The updated entity resource | |
+| **entityEntityUpdateJsonMergePatch** | [EntityEntityUpdateJsonMergePatch](EntityEntityUpdateJsonMergePatch.md) | The updated entity resource | |
 
 ### Return type
 
@@ -312,7 +312,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -321,8 +321,8 @@ example().catch(console.error);
 | **200** | entity resource updated |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
-| **422** | Unprocessable entity |  -  |
+| **404** | Not found |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -387,7 +387,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -396,7 +396,7 @@ example().catch(console.error);
 | **201** | entity resource created |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
-| **422** | Unprocessable entity |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

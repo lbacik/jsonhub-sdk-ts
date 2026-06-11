@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * 
@@ -29,22 +29,22 @@ import {
 export interface UserJsonhalUserSendResetPassword {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof UserJsonhalUserSendResetPassword
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    email: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserSendResetPassword
      */
-    email: string | null;
+    resetPasswordLink: string;
     /**
      * 
-     * @type {string}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserSendResetPassword
      */
-    resetPasswordLink: string | null;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -66,9 +66,9 @@ export function UserJsonhalUserSendResetPasswordFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'email': json['email'],
         'resetPasswordLink': json['resetPasswordLink'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -83,9 +83,9 @@ export function UserJsonhalUserSendResetPasswordToJSONTyped(value?: UserJsonhalU
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'email': value['email'],
         'resetPasswordLink': value['resetPasswordLink'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

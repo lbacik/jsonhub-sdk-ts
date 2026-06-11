@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * 
@@ -29,16 +29,10 @@ import {
 export interface DefinitionJsonhalDefinitionWrite {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
-     * @memberof DefinitionJsonhalDefinitionWrite
-     */
-    links?: DefinitionJsonhalDefinitionReadLinks;
-    /**
-     * 
      * @type {string}
      * @memberof DefinitionJsonhalDefinitionWrite
      */
-    slug?: string | null;
+    slug?: string;
     /**
      * 
      * @type {object}
@@ -50,7 +44,13 @@ export interface DefinitionJsonhalDefinitionWrite {
      * @type {string}
      * @memberof DefinitionJsonhalDefinitionWrite
      */
-    parentEntity?: string | null;
+    parentEntity?: string;
+    /**
+     * 
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
+     * @memberof DefinitionJsonhalDefinitionWrite
+     */
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -71,10 +71,10 @@ export function DefinitionJsonhalDefinitionWriteFromJSONTyped(json: any, ignoreD
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'slug': json['slug'] == null ? undefined : json['slug'],
         'jsonSchema': json['jsonSchema'],
         'parentEntity': json['parentEntity'] == null ? undefined : json['parentEntity'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -89,10 +89,10 @@ export function DefinitionJsonhalDefinitionWriteToJSONTyped(value?: DefinitionJs
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'slug': value['slug'],
         'jsonSchema': value['jsonSchema'],
         'parentEntity': value['parentEntity'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

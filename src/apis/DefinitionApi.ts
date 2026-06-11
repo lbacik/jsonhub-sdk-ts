@@ -16,22 +16,28 @@
 import * as runtime from '../runtime';
 import type {
   ApiDefinitionsGetCollection200Response,
-  DefinitionDefinitionWrite,
-  DefinitionJsonapi,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  DefinitionDefinitionWriteJsonMergePatch,
   DefinitionJsonhalDefinitionRead,
   DefinitionJsonhalDefinitionWrite,
+  ErrorJsonld,
 } from '../models/index';
 import {
     ApiDefinitionsGetCollection200ResponseFromJSON,
     ApiDefinitionsGetCollection200ResponseToJSON,
-    DefinitionDefinitionWriteFromJSON,
-    DefinitionDefinitionWriteToJSON,
-    DefinitionJsonapiFromJSON,
-    DefinitionJsonapiToJSON,
+    ConstraintViolationFromJSON,
+    ConstraintViolationToJSON,
+    ConstraintViolationJsonldFromJSON,
+    ConstraintViolationJsonldToJSON,
+    DefinitionDefinitionWriteJsonMergePatchFromJSON,
+    DefinitionDefinitionWriteJsonMergePatchToJSON,
     DefinitionJsonhalDefinitionReadFromJSON,
     DefinitionJsonhalDefinitionReadToJSON,
     DefinitionJsonhalDefinitionWriteFromJSON,
     DefinitionJsonhalDefinitionWriteToJSON,
+    ErrorJsonldFromJSON,
+    ErrorJsonldToJSON,
 } from '../models/index';
 
 export interface ApiDefinitionsGetCollectionRequest {
@@ -53,7 +59,7 @@ export interface ApiDefinitionsIdGetRequest {
 
 export interface ApiDefinitionsIdPatchRequest {
     id: string;
-    definitionDefinitionWrite: DefinitionDefinitionWrite;
+    definitionDefinitionWriteJsonMergePatch: DefinitionDefinitionWriteJsonMergePatch;
 }
 
 export interface ApiDefinitionsPostRequest {
@@ -256,10 +262,10 @@ export class DefinitionApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['definitionDefinitionWrite'] == null) {
+        if (requestParameters['definitionDefinitionWriteJsonMergePatch'] == null) {
             throw new runtime.RequiredError(
-                'definitionDefinitionWrite',
-                'Required parameter "definitionDefinitionWrite" was null or undefined when calling apiDefinitionsIdPatch().'
+                'definitionDefinitionWriteJsonMergePatch',
+                'Required parameter "definitionDefinitionWriteJsonMergePatch" was null or undefined when calling apiDefinitionsIdPatch().'
             );
         }
 
@@ -286,7 +292,7 @@ export class DefinitionApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: DefinitionDefinitionWriteToJSON(requestParameters['definitionDefinitionWrite']),
+            body: DefinitionDefinitionWriteJsonMergePatchToJSON(requestParameters['definitionDefinitionWriteJsonMergePatch']),
         };
     }
 

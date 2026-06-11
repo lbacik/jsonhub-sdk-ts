@@ -16,22 +16,28 @@
 import * as runtime from '../runtime';
 import type {
   ApiEntitiesGetCollection200Response,
-  EntityEntityUpdate,
-  EntityJsonapi,
+  ConstraintViolation,
+  ConstraintViolationJsonld,
+  EntityEntityUpdateJsonMergePatch,
   EntityJsonhalEntityCreate,
   EntityJsonhalEntityReadEntityReadParent,
+  ErrorJsonld,
 } from '../models/index';
 import {
     ApiEntitiesGetCollection200ResponseFromJSON,
     ApiEntitiesGetCollection200ResponseToJSON,
-    EntityEntityUpdateFromJSON,
-    EntityEntityUpdateToJSON,
-    EntityJsonapiFromJSON,
-    EntityJsonapiToJSON,
+    ConstraintViolationFromJSON,
+    ConstraintViolationToJSON,
+    ConstraintViolationJsonldFromJSON,
+    ConstraintViolationJsonldToJSON,
+    EntityEntityUpdateJsonMergePatchFromJSON,
+    EntityEntityUpdateJsonMergePatchToJSON,
     EntityJsonhalEntityCreateFromJSON,
     EntityJsonhalEntityCreateToJSON,
     EntityJsonhalEntityReadEntityReadParentFromJSON,
     EntityJsonhalEntityReadEntityReadParentToJSON,
+    ErrorJsonldFromJSON,
+    ErrorJsonldToJSON,
 } from '../models/index';
 
 export interface ApiEntitiesGetCollectionRequest {
@@ -55,7 +61,7 @@ export interface ApiEntitiesIdGetRequest {
 
 export interface ApiEntitiesIdPatchRequest {
     id: string;
-    entityEntityUpdate: EntityEntityUpdate;
+    entityEntityUpdateJsonMergePatch: EntityEntityUpdateJsonMergePatch;
 }
 
 export interface ApiEntitiesPostRequest {
@@ -266,10 +272,10 @@ export class EntityApi extends runtime.BaseAPI {
             );
         }
 
-        if (requestParameters['entityEntityUpdate'] == null) {
+        if (requestParameters['entityEntityUpdateJsonMergePatch'] == null) {
             throw new runtime.RequiredError(
-                'entityEntityUpdate',
-                'Required parameter "entityEntityUpdate" was null or undefined when calling apiEntitiesIdPatch().'
+                'entityEntityUpdateJsonMergePatch',
+                'Required parameter "entityEntityUpdateJsonMergePatch" was null or undefined when calling apiEntitiesIdPatch().'
             );
         }
 
@@ -296,7 +302,7 @@ export class EntityApi extends runtime.BaseAPI {
             method: 'PATCH',
             headers: headerParameters,
             query: queryParameters,
-            body: EntityEntityUpdateToJSON(requestParameters['entityEntityUpdate']),
+            body: EntityEntityUpdateJsonMergePatchToJSON(requestParameters['entityEntityUpdateJsonMergePatch']),
         };
     }
 
