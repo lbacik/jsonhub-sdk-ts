@@ -1,20 +1,20 @@
-# JsonHubApi.DefinitionApi
+# DefinitionApi
 
-All URIs are relative to *https://api.jsonhub.cloud*
+All URIs are relative to *http://localhost*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**apiDefinitionsGetCollection**](DefinitionApi.md#apiDefinitionsGetCollection) | **GET** /api/definitions | Retrieves the collection of definition resources.
-[**apiDefinitionsIdDelete**](DefinitionApi.md#apiDefinitionsIdDelete) | **DELETE** /api/definitions/{id} | Removes the definition resource.
-[**apiDefinitionsIdGet**](DefinitionApi.md#apiDefinitionsIdGet) | **GET** /api/definitions/{id} | Retrieves a definition resource.
-[**apiDefinitionsIdPatch**](DefinitionApi.md#apiDefinitionsIdPatch) | **PATCH** /api/definitions/{id} | Updates the definition resource.
-[**apiDefinitionsPost**](DefinitionApi.md#apiDefinitionsPost) | **POST** /api/definitions | Creates a definition resource.
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**apiDefinitionsGetCollection**](DefinitionApi.md#apidefinitionsgetcollection) | **GET** /api/definitions | Retrieves the collection of definition resources. |
+| [**apiDefinitionsIdDelete**](DefinitionApi.md#apidefinitionsiddelete) | **DELETE** /api/definitions/{id} | Removes the definition resource. |
+| [**apiDefinitionsIdGet**](DefinitionApi.md#apidefinitionsidget) | **GET** /api/definitions/{id} | Retrieves a definition resource. |
+| [**apiDefinitionsIdPatch**](DefinitionApi.md#apidefinitionsidpatch) | **PATCH** /api/definitions/{id} | Updates the definition resource. |
+| [**apiDefinitionsPost**](DefinitionApi.md#apidefinitionspost) | **POST** /api/definitions | Creates a definition resource. |
 
 
 
 ## apiDefinitionsGetCollection
 
-> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(opts)
+> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(qid, owned, page, limit, properties, parentEntity)
 
 Retrieves the collection of definition resources.
 
@@ -22,41 +22,59 @@ Retrieves the collection of definition resources.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  DefinitionApi,
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.DefinitionApi();
-let opts = {
-  'qid': "qid_example", // String | Filter by slug/id (partial match)
-  'isOwnedByMe': true, // Boolean | Show only definitions owned by the current user
-  'page': 1, // Number | The collection page number
-  'limit': 10, // Number | The number of items per page
-  'properties': ["null"], // [String] | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty}
-  'parentEntity': "parentEntity_example" // String | Filter by parentEntity (uuid)
-};
-apiInstance.apiDefinitionsGetCollection(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefinitionApi(config);
 
+  const body = {
+    // string | Filter by slug/id (partial match) (optional)
+    qid: qid_example,
+    // boolean | Show only definitions owned by the current user (optional)
+    owned: true,
+    // number | The collection page number (optional)
+    page: 56,
+    // number | The number of items per page (optional)
+    limit: 56,
+    // Array<string> | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]={propertyName}&properties[]={anotherPropertyName}&properties[{nestedPropertyParent}][]={nestedProperty} (optional)
+    properties: ...,
+    // string | Filter by parentEntity (uuid) (optional)
+    parentEntity: parentEntity_example,
+  } satisfies ApiDefinitionsGetCollectionRequest;
+
+  try {
+    const data = await api.apiDefinitionsGetCollection(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **qid** | **String**| Filter by slug/id (partial match) | [optional] 
- **isOwnedByMe** | **Boolean**| Show only definitions owned by the current user | [optional] 
- **page** | **Number**| The collection page number | [optional] [default to 1]
- **limit** | **Number**| The number of items per page | [optional] [default to 10]
- **properties** | [**[String]**](String.md)| Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [optional] 
- **parentEntity** | **String**| Filter by parentEntity (uuid) | [optional] 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **qid** | `string` | Filter by slug/id (partial match) | [Optional] [Defaults to `undefined`] |
+| **owned** | `boolean` | Show only definitions owned by the current user | [Optional] [Defaults to `undefined`] |
+| **page** | `number` | The collection page number | [Optional] [Defaults to `1`] |
+| **limit** | `number` | The number of items per page | [Optional] [Defaults to `10`] |
+| **properties** | `Array<string>` | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [Optional] |
+| **parentEntity** | `string` | Filter by parentEntity (uuid) | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -69,7 +87,15 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/ld+json, application/json
+- **Accept**: `application/hal+json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | definition collection |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsIdDelete
@@ -82,33 +108,48 @@ Removes the definition resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  DefinitionApi,
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.DefinitionApi();
-let id = "id_example"; // String | definition identifier
-apiInstance.apiDefinitionsIdDelete(id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefinitionApi(config);
 
+  const body = {
+    // string | definition identifier
+    id: id_example,
+  } satisfies ApiDefinitionsIdDeleteRequest;
+
+  try {
+    const data = await api.apiDefinitionsIdDelete(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| definition identifier | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | definition identifier | [Defaults to `undefined`] |
 
 ### Return type
 
-null (empty response body)
+`void` (Empty response body)
 
 ### Authorization
 
@@ -117,12 +158,22 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | definition resource deleted |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsIdGet
 
-> DefinitionJsonldDefinitionRead apiDefinitionsIdGet(id)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdGet(id)
 
 Retrieves a definition resource.
 
@@ -130,33 +181,48 @@ Retrieves a definition resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  DefinitionApi,
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdGetRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.DefinitionApi();
-let id = "id_example"; // String | definition identifier
-apiInstance.apiDefinitionsIdGet(id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefinitionApi(config);
 
+  const body = {
+    // string | definition identifier
+    id: id_example,
+  } satisfies ApiDefinitionsIdGetRequest;
+
+  try {
+    const data = await api.apiDefinitionsIdGet(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| definition identifier | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | definition identifier | [Defaults to `undefined`] |
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -165,12 +231,21 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/ld+json, application/json
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | definition resource |  -  |
+| **404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsIdPatch
 
-> DefinitionJsonldDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWriteJsonMergePatch)
 
 Updates the definition resource.
 
@@ -178,35 +253,51 @@ Updates the definition resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  DefinitionApi,
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.DefinitionApi();
-let id = "id_example"; // String | definition identifier
-let definitionDefinitionWrite = new JsonHubApi.DefinitionDefinitionWrite(); // DefinitionDefinitionWrite | The updated definition resource
-apiInstance.apiDefinitionsIdPatch(id, definitionDefinitionWrite).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefinitionApi(config);
 
+  const body = {
+    // string | definition identifier
+    id: id_example,
+    // DefinitionDefinitionWriteJsonMergePatch | The updated definition resource
+    definitionDefinitionWriteJsonMergePatch: ...,
+  } satisfies ApiDefinitionsIdPatchRequest;
+
+  try {
+    const data = await api.apiDefinitionsIdPatch(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| definition identifier | 
- **definitionDefinitionWrite** | [**DefinitionDefinitionWrite**](DefinitionDefinitionWrite.md)| The updated definition resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | definition identifier | [Defaults to `undefined`] |
+| **definitionDefinitionWriteJsonMergePatch** | [DefinitionDefinitionWriteJsonMergePatch](DefinitionDefinitionWriteJsonMergePatch.md) | The updated definition resource | |
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -214,13 +305,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/merge-patch+json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | definition resource updated |  -  |
+| **400** | Invalid input |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **422** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiDefinitionsPost
 
-> DefinitionJsonldDefinitionRead apiDefinitionsPost(definitionJsonldDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionJsonhalDefinitionWrite)
 
 Creates a definition resource.
 
@@ -228,33 +331,48 @@ Creates a definition resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  DefinitionApi,
+} from 'jsonhub-api-sdk';
+import type { ApiDefinitionsPostRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.DefinitionApi();
-let definitionJsonldDefinitionWrite = new JsonHubApi.DefinitionJsonldDefinitionWrite(); // DefinitionJsonldDefinitionWrite | The new definition resource
-apiInstance.apiDefinitionsPost(definitionJsonldDefinitionWrite).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new DefinitionApi(config);
 
+  const body = {
+    // DefinitionJsonhalDefinitionWrite | The new definition resource
+    definitionJsonhalDefinitionWrite: ...,
+  } satisfies ApiDefinitionsPostRequest;
+
+  try {
+    const data = await api.apiDefinitionsPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **definitionJsonldDefinitionWrite** | [**DefinitionJsonldDefinitionWrite**](DefinitionJsonldDefinitionWrite.md)| The new definition resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **definitionJsonhalDefinitionWrite** | [DefinitionJsonhalDefinitionWrite](DefinitionJsonhalDefinitionWrite.md) | The new definition resource | |
 
 ### Return type
 
-[**DefinitionJsonldDefinitionRead**](DefinitionJsonldDefinitionRead.md)
+[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
 
 ### Authorization
 
@@ -262,6 +380,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/ld+json, application/json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | definition resource created |  -  |
+| **400** | Invalid input |  -  |
+| **403** | Forbidden |  -  |
+| **422** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

@@ -1,15 +1,15 @@
-# JsonHubApi.UserApi
+# UserApi
 
-All URIs are relative to *https://api.jsonhub.cloud*
+All URIs are relative to *http://localhost*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**apiUsersIdDelete**](UserApi.md#apiUsersIdDelete) | **DELETE** /api/users/{id} | Removes the user resource.
-[**apiUsersIdPatch**](UserApi.md#apiUsersIdPatch) | **PATCH** /api/users/{id} | Updates the user resource.
-[**apiUsersPost**](UserApi.md#apiUsersPost) | **POST** /api/users | Creates a user resource.
-[**apiUsersresendActivationPost**](UserApi.md#apiUsersresendActivationPost) | **POST** /api/users/resend-activation | Resend activation email
-[**apiUsersresetPasswordPost**](UserApi.md#apiUsersresetPasswordPost) | **POST** /api/users/reset-password | Reset password (with token)
-[**apiUserssendResetPasswordPost**](UserApi.md#apiUserssendResetPasswordPost) | **POST** /api/users/send-reset-password | Send reset password email
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**apiUsersIdDelete**](UserApi.md#apiusersiddelete) | **DELETE** /api/users/{id} | Removes the user resource. |
+| [**apiUsersIdPatch**](UserApi.md#apiusersidpatch) | **PATCH** /api/users/{id} | Updates the user resource. |
+| [**apiUsersPost**](UserApi.md#apiuserspost) | **POST** /api/users | Creates a user resource. |
+| [**apiUsersresendActivationPost**](UserApi.md#apiusersresendactivationpost) | **POST** /api/users/resend-activation | Resend activation email |
+| [**apiUsersresetPasswordPost**](UserApi.md#apiusersresetpasswordpost) | **POST** /api/users/reset-password | Reset password (with token) |
+| [**apiUserssendResetPasswordPost**](UserApi.md#apiuserssendresetpasswordpost) | **POST** /api/users/send-reset-password | Send reset password email |
 
 
 
@@ -23,33 +23,48 @@ Removes the user resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersIdDeleteRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let id = "id_example"; // String | user identifier
-apiInstance.apiUsersIdDelete(id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new UserApi(config);
 
+  const body = {
+    // string | user identifier
+    id: id_example,
+  } satisfies ApiUsersIdDeleteRequest;
+
+  try {
+    const data = await api.apiUsersIdDelete(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| user identifier | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | user identifier | [Defaults to `undefined`] |
 
 ### Return type
 
-null (empty response body)
+`void` (Empty response body)
 
 ### Authorization
 
@@ -58,12 +73,22 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | user resource deleted |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersIdPatch
 
-> UserJsonldUserEmpty apiUsersIdPatch(id, userUserUpdate)
+> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdateJsonMergePatch)
 
 Updates the user resource.
 
@@ -71,35 +96,51 @@ Updates the user resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
-let defaultClient = JsonHubApi.ApiClient.instance;
-// Configure Bearer access token for authorization: access_token
-let access_token = defaultClient.authentications['access_token'];
-access_token.accessToken = "YOUR ACCESS TOKEN"
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersIdPatchRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let id = "id_example"; // String | user identifier
-let userUserUpdate = new JsonHubApi.UserUserUpdate(); // UserUserUpdate | The updated user resource
-apiInstance.apiUsersIdPatch(id, userUserUpdate).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new UserApi(config);
 
+  const body = {
+    // string | user identifier
+    id: id_example,
+    // UserUserUpdateJsonMergePatch | The updated user resource
+    userUserUpdateJsonMergePatch: ...,
+  } satisfies ApiUsersIdPatchRequest;
+
+  try {
+    const data = await api.apiUsersIdPatch(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| user identifier | 
- **userUserUpdate** | [**UserUserUpdate**](UserUserUpdate.md)| The updated user resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | user identifier | [Defaults to `undefined`] |
+| **userUserUpdateJsonMergePatch** | [UserUserUpdateJsonMergePatch](UserUserUpdateJsonMergePatch.md) | The updated user resource | |
 
 ### Return type
 
-[**UserJsonldUserEmpty**](UserJsonldUserEmpty.md)
+[**UserJsonhalUserEmpty**](UserJsonhalUserEmpty.md)
 
 ### Authorization
 
@@ -107,13 +148,25 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/merge-patch+json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | user resource updated |  -  |
+| **400** | Invalid input |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
+| **422** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersPost
 
-> UserJsonldUserEmpty apiUsersPost(userJsonldUserCreate)
+> UserJsonhalUserRead apiUsersPost(userJsonhalUserCreate)
 
 Creates a user resource.
 
@@ -121,29 +174,44 @@ Creates a user resource.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersPostRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let userJsonldUserCreate = new JsonHubApi.UserJsonldUserCreate(); // UserJsonldUserCreate | The new user resource
-apiInstance.apiUsersPost(userJsonldUserCreate).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const api = new UserApi();
 
+  const body = {
+    // UserJsonhalUserCreate | The new user resource
+    userJsonhalUserCreate: ...,
+  } satisfies ApiUsersPostRequest;
+
+  try {
+    const data = await api.apiUsersPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userJsonldUserCreate** | [**UserJsonldUserCreate**](UserJsonldUserCreate.md)| The new user resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userJsonhalUserCreate** | [UserJsonhalUserCreate](UserJsonhalUserCreate.md) | The new user resource | |
 
 ### Return type
 
-[**UserJsonldUserEmpty**](UserJsonldUserEmpty.md)
+[**UserJsonhalUserRead**](UserJsonhalUserRead.md)
 
 ### Authorization
 
@@ -151,13 +219,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/ld+json, application/json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | user resource created |  -  |
+| **400** | Invalid input |  -  |
+| **422** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersresendActivationPost
 
-> UserJsonld apiUsersresendActivationPost(userJsonldUserResendActivation)
+> UserJsonhal apiUsersresendActivationPost(userJsonhalUserResendActivation)
 
 Resend activation email
 
@@ -165,29 +243,44 @@ This endpoint resends the activation email to the user.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersresendActivationPostRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let userJsonldUserResendActivation = new JsonHubApi.UserJsonldUserResendActivation(); // UserJsonldUserResendActivation | The new user resource
-apiInstance.apiUsersresendActivationPost(userJsonldUserResendActivation).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const api = new UserApi();
 
+  const body = {
+    // UserJsonhalUserResendActivation | The new user resource
+    userJsonhalUserResendActivation: ...,
+  } satisfies ApiUsersresendActivationPostRequest;
+
+  try {
+    const data = await api.apiUsersresendActivationPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userJsonldUserResendActivation** | [**UserJsonldUserResendActivation**](UserJsonldUserResendActivation.md)| The new user resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userJsonhalUserResendActivation** | [UserJsonhalUserResendActivation](UserJsonhalUserResendActivation.md) | The new user resource | |
 
 ### Return type
 
-[**UserJsonld**](UserJsonld.md)
+[**UserJsonhal**](UserJsonhal.md)
 
 ### Authorization
 
@@ -195,13 +288,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/ld+json, application/json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No content. |  -  |
+| **400** | Invalid input |  -  |
+| **422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersresetPasswordPost
 
-> UserJsonldUserEmpty apiUsersresetPasswordPost(userJsonldUserResetPassword)
+> UserJsonhalUserEmpty apiUsersresetPasswordPost(userJsonhalUserResetPassword)
 
 Reset password (with token)
 
@@ -209,29 +312,44 @@ This endpoint resets the password of the user using the token sent by email.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersresetPasswordPostRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let userJsonldUserResetPassword = new JsonHubApi.UserJsonldUserResetPassword(); // UserJsonldUserResetPassword | The new user resource
-apiInstance.apiUsersresetPasswordPost(userJsonldUserResetPassword).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const api = new UserApi();
 
+  const body = {
+    // UserJsonhalUserResetPassword | The new user resource
+    userJsonhalUserResetPassword: ...,
+  } satisfies ApiUsersresetPasswordPostRequest;
+
+  try {
+    const data = await api.apiUsersresetPasswordPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userJsonldUserResetPassword** | [**UserJsonldUserResetPassword**](UserJsonldUserResetPassword.md)| The new user resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userJsonhalUserResetPassword** | [UserJsonhalUserResetPassword](UserJsonhalUserResetPassword.md) | The new user resource | |
 
 ### Return type
 
-[**UserJsonldUserEmpty**](UserJsonldUserEmpty.md)
+[**UserJsonhalUserEmpty**](UserJsonhalUserEmpty.md)
 
 ### Authorization
 
@@ -239,13 +357,23 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/ld+json, application/json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No content. |  -  |
+| **400** | Invalid input |  -  |
+| **422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUserssendResetPasswordPost
 
-> UserJsonldUserEmpty apiUserssendResetPasswordPost(userJsonldUserSendResetPassword)
+> UserJsonhal apiUserssendResetPasswordPost(userJsonhalUserSendResetPassword)
 
 Send reset password email
 
@@ -253,29 +381,44 @@ This endpoint sends a reset password email to the user.
 
 ### Example
 
-```javascript
-import JsonHubApi from 'json_hub_api';
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUserssendResetPasswordPostRequest } from 'jsonhub-api-sdk';
 
-let apiInstance = new JsonHubApi.UserApi();
-let userJsonldUserSendResetPassword = new JsonHubApi.UserJsonldUserSendResetPassword(); // UserJsonldUserSendResetPassword | The new user resource
-apiInstance.apiUserssendResetPasswordPost(userJsonldUserSendResetPassword).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const api = new UserApi();
 
+  const body = {
+    // UserJsonhalUserSendResetPassword | The new user resource
+    userJsonhalUserSendResetPassword: ...,
+  } satisfies ApiUserssendResetPasswordPostRequest;
+
+  try {
+    const data = await api.apiUserssendResetPasswordPost(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
 ```
 
 ### Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userJsonldUserSendResetPassword** | [**UserJsonldUserSendResetPassword**](UserJsonldUserSendResetPassword.md)| The new user resource | 
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **userJsonhalUserSendResetPassword** | [UserJsonhalUserSendResetPassword](UserJsonhalUserSendResetPassword.md) | The new user resource | |
 
 ### Return type
 
-[**UserJsonldUserEmpty**](UserJsonldUserEmpty.md)
+[**UserJsonhal**](UserJsonhal.md)
 
 ### Authorization
 
@@ -283,6 +426,16 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/ld+json, application/json
-- **Accept**: application/ld+json, application/json
+- **Content-Type**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No content. |  -  |
+| **400** | Invalid input |  -  |
+| **422** | Unprocessable entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
