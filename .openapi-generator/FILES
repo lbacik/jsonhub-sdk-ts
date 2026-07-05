@@ -1,6 +1,5 @@
 .gitignore
 .npmignore
-.openapi-generator-ignore
 README.md
 docs/ApiDefinitionsGetCollection200Response.md
 docs/ApiEntitiesGetCollection200Response.md

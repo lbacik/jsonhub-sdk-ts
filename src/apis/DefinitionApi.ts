@@ -17,27 +17,21 @@ import * as runtime from '../runtime';
 import type {
   ApiDefinitionsGetCollection200Response,
   ConstraintViolation,
-  ConstraintViolationJsonld,
   DefinitionDefinitionWriteJsonMergePatch,
   DefinitionJsonhalDefinitionRead,
   DefinitionJsonhalDefinitionWrite,
-  ErrorJsonld,
 } from '../models/index';
 import {
     ApiDefinitionsGetCollection200ResponseFromJSON,
     ApiDefinitionsGetCollection200ResponseToJSON,
     ConstraintViolationFromJSON,
     ConstraintViolationToJSON,
-    ConstraintViolationJsonldFromJSON,
-    ConstraintViolationJsonldToJSON,
     DefinitionDefinitionWriteJsonMergePatchFromJSON,
     DefinitionDefinitionWriteJsonMergePatchToJSON,
     DefinitionJsonhalDefinitionReadFromJSON,
     DefinitionJsonhalDefinitionReadToJSON,
     DefinitionJsonhalDefinitionWriteFromJSON,
     DefinitionJsonhalDefinitionWriteToJSON,
-    ErrorJsonldFromJSON,
-    ErrorJsonldToJSON,
 } from '../models/index';
 
 export interface ApiDefinitionsGetCollectionRequest {

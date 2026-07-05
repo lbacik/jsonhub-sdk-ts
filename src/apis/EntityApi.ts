@@ -17,27 +17,21 @@ import * as runtime from '../runtime';
 import type {
   ApiEntitiesGetCollection200Response,
   ConstraintViolation,
-  ConstraintViolationJsonld,
   EntityEntityUpdateJsonMergePatch,
   EntityJsonhalEntityCreate,
   EntityJsonhalEntityReadEntityReadParent,
-  ErrorJsonld,
 } from '../models/index';
 import {
     ApiEntitiesGetCollection200ResponseFromJSON,
     ApiEntitiesGetCollection200ResponseToJSON,
     ConstraintViolationFromJSON,
     ConstraintViolationToJSON,
-    ConstraintViolationJsonldFromJSON,
-    ConstraintViolationJsonldToJSON,
     EntityEntityUpdateJsonMergePatchFromJSON,
     EntityEntityUpdateJsonMergePatchToJSON,
     EntityJsonhalEntityCreateFromJSON,
     EntityJsonhalEntityCreateToJSON,
     EntityJsonhalEntityReadEntityReadParentFromJSON,
     EntityJsonhalEntityReadEntityReadParentToJSON,
-    ErrorJsonldFromJSON,
-    ErrorJsonldToJSON,
 } from '../models/index';
 
 export interface ApiEntitiesGetCollectionRequest {

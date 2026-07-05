@@ -74,7 +74,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/problem+json`
 
 
 ### HTTP response details
@@ -150,7 +150,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -221,7 +221,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -286,7 +286,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/ld+json`, `application/problem+json`
+- **Accept**: `application/json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -356,7 +356,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -425,7 +425,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -494,7 +494,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details

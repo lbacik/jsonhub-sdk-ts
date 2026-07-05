@@ -158,7 +158,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/problem+json`
 
 
 ### HTTP response details
@@ -231,7 +231,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -306,7 +306,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -381,7 +381,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
+- **Accept**: `application/hal+json`, `application/problem+json`
 
 
 ### HTTP response details
