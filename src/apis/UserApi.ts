@@ -15,6 +15,7 @@
 
 import * as runtime from '../runtime';
 import type {
+  ApiUsersmeGet200Response,
   ConstraintViolation,
   ConstraintViolationJsonld,
   ErrorJsonld,
@@ -28,6 +29,8 @@ import type {
   UserUserUpdateJsonMergePatch,
 } from '../models/index';
 import {
+    ApiUsersmeGet200ResponseFromJSON,
+    ApiUsersmeGet200ResponseToJSON,
     ConstraintViolationFromJSON,
     ConstraintViolationToJSON,
     ConstraintViolationJsonldFromJSON,
@@ -247,6 +250,53 @@ export class UserApi extends runtime.BaseAPI {
      */
     async apiUsersPost(requestParameters: ApiUsersPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserJsonhalUserRead> {
         const response = await this.apiUsersPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for apiUsersmeGet without sending the request
+     */
+    async apiUsersmeGetRequestOpts(): Promise<runtime.RequestOpts> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("access_token", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/users/me`;
+
+        return {
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        };
+    }
+
+    /**
+     * Returns quota usage and limits for the authenticated user.
+     * Get current user information
+     */
+    async apiUsersmeGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiUsersmeGet200Response>> {
+        const requestOptions = await this.apiUsersmeGetRequestOpts();
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiUsersmeGet200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Returns quota usage and limits for the authenticated user.
+     * Get current user information
+     */
+    async apiUsersmeGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiUsersmeGet200Response> {
+        const response = await this.apiUsersmeGetRaw(initOverrides);
         return await response.value();
     }
 

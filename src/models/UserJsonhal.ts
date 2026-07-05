@@ -13,6 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
+import type { CurrentUserLimits } from './CurrentUserLimits';
+import {
+    CurrentUserLimitsFromJSON,
+    CurrentUserLimitsFromJSONTyped,
+    CurrentUserLimitsToJSON,
+    CurrentUserLimitsToJSONTyped,
+} from './CurrentUserLimits';
 import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
     HalCollectionBaseSchemaNoPaginationLinksFromJSON,
@@ -29,46 +36,10 @@ import {
 export interface UserJsonhal {
     /**
      * 
-     * @type {string}
+     * @type {CurrentUserLimits}
      * @memberof UserJsonhal
      */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    email: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    password?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    oldPassword?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    token?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    resetPasswordLink?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserJsonhal
-     */
-    activationUrl?: string;
+    limits?: CurrentUserLimits;
     /**
      * 
      * @type {HalCollectionBaseSchemaNoPaginationLinks}
@@ -81,7 +52,6 @@ export interface UserJsonhal {
  * Check if a given object implements the UserJsonhal interface.
  */
 export function instanceOfUserJsonhal(value: object): value is UserJsonhal {
-    if (!('email' in value) || value['email'] === undefined) return false;
     return true;
 }
 
@@ -95,13 +65,7 @@ export function UserJsonhalFromJSONTyped(json: any, ignoreDiscriminator: boolean
     }
     return {
         
-        'id': json['id'] == null ? undefined : json['id'],
-        'email': json['email'],
-        'password': json['password'] == null ? undefined : json['password'],
-        'oldPassword': json['oldPassword'] == null ? undefined : json['oldPassword'],
-        'token': json['token'] == null ? undefined : json['token'],
-        'resetPasswordLink': json['resetPasswordLink'] == null ? undefined : json['resetPasswordLink'],
-        'activationUrl': json['activationUrl'] == null ? undefined : json['activationUrl'],
+        'limits': json['limits'] == null ? undefined : CurrentUserLimitsFromJSON(json['limits']),
         'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
@@ -117,13 +81,7 @@ export function UserJsonhalToJSONTyped(value?: UserJsonhal | null, ignoreDiscrim
 
     return {
         
-        'id': value['id'],
-        'email': value['email'],
-        'password': value['password'],
-        'oldPassword': value['oldPassword'],
-        'token': value['token'],
-        'resetPasswordLink': value['resetPasswordLink'],
-        'activationUrl': value['activationUrl'],
+        'limits': CurrentUserLimitsToJSON(value['limits']),
         '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }

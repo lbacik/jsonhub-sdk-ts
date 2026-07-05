@@ -1,24 +1,24 @@
 
-# UserJsonhal
+# ApiUsersmeGet200ResponseLimitsPrivateEntities
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`limits` | [CurrentUserLimits](CurrentUserLimits.md)
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`used` | number
+`limit` | number
 
 ## Example
 
 ```typescript
-import type { UserJsonhal } from 'jsonhub-api-sdk'
+import type { ApiUsersmeGet200ResponseLimitsPrivateEntities } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "limits": null,
-  "links": null,
-} satisfies UserJsonhal
+  "used": 1,
+  "limit": 2,
+} satisfies ApiUsersmeGet200ResponseLimitsPrivateEntities
 
 console.log(example)
 
@@ -27,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhal
+const exampleParsed = JSON.parse(exampleJSON) as ApiUsersmeGet200ResponseLimitsPrivateEntities
 console.log(exampleParsed)
 ```
 

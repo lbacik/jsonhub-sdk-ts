@@ -1,24 +1,32 @@
 
-# UserJsonhal
+# PersonalAccessTokenJsonhalPersonalAccessTokenRead
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`limits` | [CurrentUserLimits](CurrentUserLimits.md)
+`id` | string
+`name` | string
+`tokenPreview` | string
+`expiresAt` | Date
+`createdAt` | Date
 `links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
 ```typescript
-import type { UserJsonhal } from 'jsonhub-api-sdk'
+import type { PersonalAccessTokenJsonhalPersonalAccessTokenRead } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "limits": null,
+  "id": null,
+  "name": null,
+  "tokenPreview": null,
+  "expiresAt": null,
+  "createdAt": null,
   "links": null,
-} satisfies UserJsonhal
+} satisfies PersonalAccessTokenJsonhalPersonalAccessTokenRead
 
 console.log(example)
 
@@ -27,7 +35,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhal
+const exampleParsed = JSON.parse(exampleJSON) as PersonalAccessTokenJsonhalPersonalAccessTokenRead
 console.log(exampleParsed)
 ```
 

@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**apiUsersIdDelete**](UserApi.md#apiusersiddelete) | **DELETE** /api/users/{id} | Removes the user resource. |
 | [**apiUsersIdPatch**](UserApi.md#apiusersidpatch) | **PATCH** /api/users/{id} | Updates the user resource. |
 | [**apiUsersPost**](UserApi.md#apiuserspost) | **POST** /api/users | Creates a user resource. |
+| [**apiUsersmeGet**](UserApi.md#apiusersmeget) | **GET** /api/users/me | Get current user information |
 | [**apiUsersresendActivationPost**](UserApi.md#apiusersresendactivationpost) | **POST** /api/users/resend-activation | Resend activation email |
 | [**apiUsersresetPasswordPost**](UserApi.md#apiusersresetpasswordpost) | **POST** /api/users/reset-password | Reset password (with token) |
 | [**apiUserssendResetPasswordPost**](UserApi.md#apiuserssendresetpasswordpost) | **POST** /api/users/send-reset-password | Send reset password email |
@@ -229,6 +230,72 @@ No authorization required
 | **201** | user resource created |  -  |
 | **400** | Invalid input |  -  |
 | **422** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## apiUsersmeGet
+
+> ApiUsersmeGet200Response apiUsersmeGet()
+
+Get current user information
+
+Returns quota usage and limits for the authenticated user.
+
+### Example
+
+```ts
+import {
+  Configuration,
+  UserApi,
+} from 'jsonhub-api-sdk';
+import type { ApiUsersmeGetRequest } from 'jsonhub-api-sdk';
+
+async function example() {
+  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: access_token
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new UserApi(config);
+
+  try {
+    const data = await api.apiUsersmeGet();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ApiUsersmeGet200Response**](ApiUsersmeGet200Response.md)
+
+### Authorization
+
+[access_token](../README.md#access_token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`, `application/ld+json`, `application/problem+json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Current user quota usage. |  -  |
+| **401** | Authentication required. |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

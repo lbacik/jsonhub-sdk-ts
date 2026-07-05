@@ -3,4 +3,5 @@
 export * from './DefinitionApi';
 export * from './EntityApi';
 export * from './Oauth2Api';
+export * from './PersonalAccessTokenApi';
 export * from './UserApi';

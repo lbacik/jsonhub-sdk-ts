@@ -1,24 +1,24 @@
 
-# UserJsonhal
+# PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`limits` | [CurrentUserLimits](CurrentUserLimits.md)
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`name` | string
+`expiresAt` | Date
 
 ## Example
 
 ```typescript
-import type { UserJsonhal } from 'jsonhub-api-sdk'
+import type { PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "limits": null,
-  "links": null,
-} satisfies UserJsonhal
+  "name": null,
+  "expiresAt": null,
+} satisfies PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch
 
 console.log(example)
 
@@ -27,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhal
+const exampleParsed = JSON.parse(exampleJSON) as PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch
 console.log(exampleParsed)
 ```
 

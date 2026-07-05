@@ -81,9 +81,14 @@ All URIs are relative to *http://localhost*
 *Oauth2Api* | [**oauth2Revoke**](docs/Oauth2Api.md#oauth2revoke) | **POST** /oauth2/revoke | Revoke OAuth consent
 *Oauth2Api* | [**oauth2Token**](docs/Oauth2Api.md#oauth2token) | **POST** /oauth2/token | Exchange authorization code
 *Oauth2Api* | [**oauth2TokenExchange**](docs/Oauth2Api.md#oauth2tokenexchange) | **POST** /oauth2/token-exchange | Exchange MCP token for JsonHub API token
+*PersonalAccessTokenApi* | [**apiMeapiTokensGetCollection**](docs/PersonalAccessTokenApi.md#apimeapitokensgetcollection) | **GET** /api/me/api-tokens | Retrieves the collection of personal access token resources.
+*PersonalAccessTokenApi* | [**apiMeapiTokensIdDelete**](docs/PersonalAccessTokenApi.md#apimeapitokensiddelete) | **DELETE** /api/me/api-tokens/{id} | Removes the personal access token resource.
+*PersonalAccessTokenApi* | [**apiMeapiTokensIdPatch**](docs/PersonalAccessTokenApi.md#apimeapitokensidpatch) | **PATCH** /api/me/api-tokens/{id} | Updates the personal access token resource.
+*PersonalAccessTokenApi* | [**apiMeapiTokensPost**](docs/PersonalAccessTokenApi.md#apimeapitokenspost) | **POST** /api/me/api-tokens | Creates a personal access token resource.
 *UserApi* | [**apiUsersIdDelete**](docs/UserApi.md#apiusersiddelete) | **DELETE** /api/users/{id} | Removes the user resource.
 *UserApi* | [**apiUsersIdPatch**](docs/UserApi.md#apiusersidpatch) | **PATCH** /api/users/{id} | Updates the user resource.
 *UserApi* | [**apiUsersPost**](docs/UserApi.md#apiuserspost) | **POST** /api/users | Creates a user resource.
+*UserApi* | [**apiUsersmeGet**](docs/UserApi.md#apiusersmeget) | **GET** /api/users/me | Get current user information
 *UserApi* | [**apiUsersresendActivationPost**](docs/UserApi.md#apiusersresendactivationpost) | **POST** /api/users/resend-activation | Resend activation email
 *UserApi* | [**apiUsersresetPasswordPost**](docs/UserApi.md#apiusersresetpasswordpost) | **POST** /api/users/reset-password | Reset password (with token)
 *UserApi* | [**apiUserssendResetPasswordPost**](docs/UserApi.md#apiuserssendresetpasswordpost) | **POST** /api/users/send-reset-password | Send reset password email
@@ -93,9 +98,19 @@ All URIs are relative to *http://localhost*
 
 - [ApiDefinitionsGetCollection200Response](docs/ApiDefinitionsGetCollection200Response.md)
 - [ApiEntitiesGetCollection200Response](docs/ApiEntitiesGetCollection200Response.md)
+- [ApiMeapiTokensGetCollection200Response](docs/ApiMeapiTokensGetCollection200Response.md)
+- [ApiUsersmeGet200Response](docs/ApiUsersmeGet200Response.md)
+- [ApiUsersmeGet200ResponseLimits](docs/ApiUsersmeGet200ResponseLimits.md)
+- [ApiUsersmeGet200ResponseLimitsDefinitions](docs/ApiUsersmeGet200ResponseLimitsDefinitions.md)
+- [ApiUsersmeGet200ResponseLimitsEntities](docs/ApiUsersmeGet200ResponseLimitsEntities.md)
+- [ApiUsersmeGet200ResponseLimitsPrivateEntities](docs/ApiUsersmeGet200ResponseLimitsPrivateEntities.md)
 - [ConstraintViolation](docs/ConstraintViolation.md)
 - [ConstraintViolationJsonld](docs/ConstraintViolationJsonld.md)
 - [ConstraintViolationViolationsInner](docs/ConstraintViolationViolationsInner.md)
+- [CurrentUserLimitUsage](docs/CurrentUserLimitUsage.md)
+- [CurrentUserLimitUsageJsonld](docs/CurrentUserLimitUsageJsonld.md)
+- [CurrentUserLimits](docs/CurrentUserLimits.md)
+- [CurrentUserLimitsJsonld](docs/CurrentUserLimitsJsonld.md)
 - [Definition](docs/Definition.md)
 - [DefinitionDefinitionRead](docs/DefinitionDefinitionRead.md)
 - [DefinitionDefinitionWrite](docs/DefinitionDefinitionWrite.md)
@@ -153,6 +168,18 @@ All URIs are relative to *http://localhost*
 - [Oauth2RegisterRequest](docs/Oauth2RegisterRequest.md)
 - [Oauth2Token200Response](docs/Oauth2Token200Response.md)
 - [Oauth2TokenExchange200Response](docs/Oauth2TokenExchange200Response.md)
+- [PersonalAccessToken](docs/PersonalAccessToken.md)
+- [PersonalAccessTokenJsonapi](docs/PersonalAccessTokenJsonapi.md)
+- [PersonalAccessTokenJsonapiData](docs/PersonalAccessTokenJsonapiData.md)
+- [PersonalAccessTokenJsonhalPersonalAccessTokenRead](docs/PersonalAccessTokenJsonhalPersonalAccessTokenRead.md)
+- [PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
+- [PersonalAccessTokenJsonhalPersonalAccessTokenWrite](docs/PersonalAccessTokenJsonhalPersonalAccessTokenWrite.md)
+- [PersonalAccessTokenJsonldPersonalAccessTokenRead](docs/PersonalAccessTokenJsonldPersonalAccessTokenRead.md)
+- [PersonalAccessTokenJsonldPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenJsonldPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
+- [PersonalAccessTokenPersonalAccessTokenRead](docs/PersonalAccessTokenPersonalAccessTokenRead.md)
+- [PersonalAccessTokenPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
+- [PersonalAccessTokenPersonalAccessTokenWrite](docs/PersonalAccessTokenPersonalAccessTokenWrite.md)
+- [PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch](docs/PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch.md)
 - [User](docs/User.md)
 - [UserJsonapi](docs/UserJsonapi.md)
 - [UserJsonapiData](docs/UserJsonapiData.md)
