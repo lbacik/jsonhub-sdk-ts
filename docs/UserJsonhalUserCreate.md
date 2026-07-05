@@ -7,10 +7,10 @@ Create user
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `email` | string
 `password` | string
 `activationUrl` | string
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -19,10 +19,10 @@ import type { UserJsonhalUserCreate } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "email": null,
   "password": null,
   "activationUrl": null,
+  "links": null,
 } satisfies UserJsonhalUserCreate
 
 console.log(example)

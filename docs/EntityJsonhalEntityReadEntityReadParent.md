@@ -2,19 +2,18 @@
 # EntityJsonhalEntityReadEntityReadParent
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `id` | string
 `slug` | string
 `data` | object
-`definition` | [DefinitionJsonhalEntityReadEntityReadParent](DefinitionJsonhalEntityReadEntityReadParent.md)
+`definition` | [DefinitionEntityReadEntityReadParent](DefinitionEntityReadEntityReadParent.md)
 `parent` | string
 `_private` | boolean
 `isOwnedByCurrentUser` | boolean
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -23,7 +22,6 @@ import type { EntityJsonhalEntityReadEntityReadParent } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "id": null,
   "slug": null,
   "data": null,
@@ -31,6 +29,7 @@ const example = {
   "parent": null,
   "_private": null,
   "isOwnedByCurrentUser": null,
+  "links": null,
 } satisfies EntityJsonhalEntityReadEntityReadParent
 
 console.log(example)

@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * 
@@ -29,22 +29,22 @@ import {
 export interface UserJsonhalUserResendActivation {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof UserJsonhalUserResendActivation
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    email: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserResendActivation
      */
-    email: string | null;
+    activationUrl?: string;
     /**
      * 
-     * @type {string}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserResendActivation
      */
-    activationUrl?: string | null;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -65,9 +65,9 @@ export function UserJsonhalUserResendActivationFromJSONTyped(json: any, ignoreDi
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'email': json['email'],
         'activationUrl': json['activationUrl'] == null ? undefined : json['activationUrl'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -82,9 +82,9 @@ export function UserJsonhalUserResendActivationToJSONTyped(value?: UserJsonhalUs
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'email': value['email'],
         'activationUrl': value['activationUrl'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

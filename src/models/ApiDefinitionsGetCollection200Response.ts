@@ -13,33 +13,27 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ApiDefinitionsGetCollection200ResponseLinks } from './ApiDefinitionsGetCollection200ResponseLinks';
+import type { DefinitionJsonhalDefinitionRead } from './DefinitionJsonhalDefinitionRead';
 import {
-    ApiDefinitionsGetCollection200ResponseLinksFromJSON,
-    ApiDefinitionsGetCollection200ResponseLinksFromJSONTyped,
-    ApiDefinitionsGetCollection200ResponseLinksToJSON,
-    ApiDefinitionsGetCollection200ResponseLinksToJSONTyped,
-} from './ApiDefinitionsGetCollection200ResponseLinks';
-import type { ApiDefinitionsGetCollection200ResponseEmbedded } from './ApiDefinitionsGetCollection200ResponseEmbedded';
+    DefinitionJsonhalDefinitionReadFromJSON,
+    DefinitionJsonhalDefinitionReadFromJSONTyped,
+    DefinitionJsonhalDefinitionReadToJSON,
+    DefinitionJsonhalDefinitionReadToJSONTyped,
+} from './DefinitionJsonhalDefinitionRead';
+import type { HalCollectionBaseSchemaAllOfLinks } from './HalCollectionBaseSchemaAllOfLinks';
 import {
-    ApiDefinitionsGetCollection200ResponseEmbeddedFromJSON,
-    ApiDefinitionsGetCollection200ResponseEmbeddedFromJSONTyped,
-    ApiDefinitionsGetCollection200ResponseEmbeddedToJSON,
-    ApiDefinitionsGetCollection200ResponseEmbeddedToJSONTyped,
-} from './ApiDefinitionsGetCollection200ResponseEmbedded';
+    HalCollectionBaseSchemaAllOfLinksFromJSON,
+    HalCollectionBaseSchemaAllOfLinksFromJSONTyped,
+    HalCollectionBaseSchemaAllOfLinksToJSON,
+    HalCollectionBaseSchemaAllOfLinksToJSONTyped,
+} from './HalCollectionBaseSchemaAllOfLinks';
 
 /**
- * 
+ * definition.jsonhal-definition.read collection.
  * @export
  * @interface ApiDefinitionsGetCollection200Response
  */
 export interface ApiDefinitionsGetCollection200Response {
-    /**
-     * 
-     * @type {ApiDefinitionsGetCollection200ResponseEmbedded}
-     * @memberof ApiDefinitionsGetCollection200Response
-     */
-    embedded: ApiDefinitionsGetCollection200ResponseEmbedded;
     /**
      * 
      * @type {number}
@@ -48,16 +42,22 @@ export interface ApiDefinitionsGetCollection200Response {
     totalItems?: number;
     /**
      * 
+     * @type {{ [key: string]: Array<DefinitionJsonhalDefinitionRead>; }}
+     * @memberof ApiDefinitionsGetCollection200Response
+     */
+    embedded: { [key: string]: Array<DefinitionJsonhalDefinitionRead>; } | null;
+    /**
+     * 
+     * @type {HalCollectionBaseSchemaAllOfLinks}
+     * @memberof ApiDefinitionsGetCollection200Response
+     */
+    links: HalCollectionBaseSchemaAllOfLinks;
+    /**
+     * 
      * @type {number}
      * @memberof ApiDefinitionsGetCollection200Response
      */
     itemsPerPage?: number;
-    /**
-     * 
-     * @type {ApiDefinitionsGetCollection200ResponseLinks}
-     * @memberof ApiDefinitionsGetCollection200Response
-     */
-    links: ApiDefinitionsGetCollection200ResponseLinks;
 }
 
 /**
@@ -79,10 +79,10 @@ export function ApiDefinitionsGetCollection200ResponseFromJSONTyped(json: any, i
     }
     return {
         
-        'embedded': ApiDefinitionsGetCollection200ResponseEmbeddedFromJSON(json['_embedded']),
         'totalItems': json['totalItems'] == null ? undefined : json['totalItems'],
+        'embedded': json['_embedded'],
+        'links': HalCollectionBaseSchemaAllOfLinksFromJSON(json['_links']),
         'itemsPerPage': json['itemsPerPage'] == null ? undefined : json['itemsPerPage'],
-        'links': ApiDefinitionsGetCollection200ResponseLinksFromJSON(json['_links']),
     };
 }
 
@@ -97,10 +97,10 @@ export function ApiDefinitionsGetCollection200ResponseToJSONTyped(value?: ApiDef
 
     return {
         
-        '_embedded': ApiDefinitionsGetCollection200ResponseEmbeddedToJSON(value['embedded']),
         'totalItems': value['totalItems'],
+        '_embedded': value['embedded'],
+        '_links': HalCollectionBaseSchemaAllOfLinksToJSON(value['links']),
         'itemsPerPage': value['itemsPerPage'],
-        '_links': ApiDefinitionsGetCollection200ResponseLinksToJSON(value['links']),
     };
 }
 

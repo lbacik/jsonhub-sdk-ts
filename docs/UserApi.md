@@ -73,7 +73,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -81,14 +81,14 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **204** | user resource deleted |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
+| **404** | Not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersIdPatch
 
-> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdate)
+> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdateJsonMergePatch)
 
 Updates the user resource.
 
@@ -114,8 +114,8 @@ async function example() {
   const body = {
     // string | user identifier
     id: id_example,
-    // UserUserUpdate | The updated user resource
-    userUserUpdate: ...,
+    // UserUserUpdateJsonMergePatch | The updated user resource
+    userUserUpdateJsonMergePatch: ...,
   } satisfies ApiUsersIdPatchRequest;
 
   try {
@@ -136,7 +136,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | user identifier | [Defaults to `undefined`] |
-| **userUserUpdate** | [UserUserUpdate](UserUserUpdate.md) | The updated user resource | |
+| **userUserUpdateJsonMergePatch** | [UserUserUpdateJsonMergePatch](UserUserUpdateJsonMergePatch.md) | The updated user resource | |
 
 ### Return type
 
@@ -149,7 +149,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -158,8 +158,8 @@ example().catch(console.error);
 | **200** | user resource updated |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
-| **404** | Resource not found |  -  |
-| **422** | Unprocessable entity |  -  |
+| **404** | Not found |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -220,7 +220,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: `application/hal+json`
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -228,14 +228,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **201** | user resource created |  -  |
 | **400** | Invalid input |  -  |
-| **422** | Unprocessable entity |  -  |
+| **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
 ## apiUsersresendActivationPost
 
-> apiUsersresendActivationPost(userJsonhalUserResendActivation)
+> UserJsonhal apiUsersresendActivationPost(userJsonhalUserResendActivation)
 
 Resend activation email
 
@@ -280,7 +280,7 @@ example().catch(console.error);
 
 ### Return type
 
-`void` (Empty response body)
+[**UserJsonhal**](UserJsonhal.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: Not defined
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -304,7 +304,7 @@ No authorization required
 
 ## apiUsersresetPasswordPost
 
-> apiUsersresetPasswordPost(userJsonhalUserResetPassword)
+> UserJsonhalUserEmpty apiUsersresetPasswordPost(userJsonhalUserResetPassword)
 
 Reset password (with token)
 
@@ -349,7 +349,7 @@ example().catch(console.error);
 
 ### Return type
 
-`void` (Empty response body)
+[**UserJsonhalUserEmpty**](UserJsonhalUserEmpty.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: Not defined
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details
@@ -373,7 +373,7 @@ No authorization required
 
 ## apiUserssendResetPasswordPost
 
-> apiUserssendResetPasswordPost(userJsonhalUserSendResetPassword)
+> UserJsonhal apiUserssendResetPasswordPost(userJsonhalUserSendResetPassword)
 
 Send reset password email
 
@@ -418,7 +418,7 @@ example().catch(console.error);
 
 ### Return type
 
-`void` (Empty response body)
+[**UserJsonhal**](UserJsonhal.md)
 
 ### Authorization
 
@@ -427,7 +427,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/hal+json`
-- **Accept**: Not defined
+- **Accept**: `application/hal+json`, `application/ld+json`, `application/problem+json`, `application/json`
 
 
 ### HTTP response details

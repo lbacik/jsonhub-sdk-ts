@@ -2,14 +2,13 @@
 # UserJsonhalUserResendActivation
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `email` | string
 `activationUrl` | string
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -18,9 +17,9 @@ import type { UserJsonhalUserResendActivation } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "email": null,
   "activationUrl": null,
+  "links": null,
 } satisfies UserJsonhalUserResendActivation
 
 console.log(example)

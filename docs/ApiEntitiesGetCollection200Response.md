@@ -1,15 +1,16 @@
 
 # ApiEntitiesGetCollection200Response
 
+entity.jsonhal-entity.read_entity.read.parent collection.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`embedded` | [ApiEntitiesGetCollection200ResponseEmbedded](ApiEntitiesGetCollection200ResponseEmbedded.md)
 `totalItems` | number
+`embedded` | { [key: string]: Array&lt;EntityJsonhalEntityReadEntityReadParent&gt;; }
+`links` | [HalCollectionBaseSchemaAllOfLinks](HalCollectionBaseSchemaAllOfLinks.md)
 `itemsPerPage` | number
-`links` | [ApiDefinitionsGetCollection200ResponseLinks](ApiDefinitionsGetCollection200ResponseLinks.md)
 
 ## Example
 
@@ -18,10 +19,10 @@ import type { ApiEntitiesGetCollection200Response } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "embedded": null,
   "totalItems": null,
-  "itemsPerPage": null,
+  "embedded": null,
   "links": null,
+  "itemsPerPage": null,
 } satisfies ApiEntitiesGetCollection200Response
 
 console.log(example)

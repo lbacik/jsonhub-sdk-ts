@@ -1,15 +1,16 @@
 
 # ApiDefinitionsGetCollection200Response
 
+definition.jsonhal-definition.read collection.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`embedded` | [ApiDefinitionsGetCollection200ResponseEmbedded](ApiDefinitionsGetCollection200ResponseEmbedded.md)
 `totalItems` | number
+`embedded` | { [key: string]: Array&lt;DefinitionJsonhalDefinitionRead&gt;; }
+`links` | [HalCollectionBaseSchemaAllOfLinks](HalCollectionBaseSchemaAllOfLinks.md)
 `itemsPerPage` | number
-`links` | [ApiDefinitionsGetCollection200ResponseLinks](ApiDefinitionsGetCollection200ResponseLinks.md)
 
 ## Example
 
@@ -18,10 +19,10 @@ import type { ApiDefinitionsGetCollection200Response } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "embedded": null,
   "totalItems": null,
-  "itemsPerPage": null,
+  "embedded": null,
   "links": null,
+  "itemsPerPage": null,
 } satisfies ApiDefinitionsGetCollection200Response
 
 console.log(example)

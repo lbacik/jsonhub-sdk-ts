@@ -2,17 +2,16 @@
 # DefinitionJsonhalDefinitionRead
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `id` | string
 `slug` | string
 `jsonSchema` | object
-`parentEntity` | [EntityJsonhalDefinitionRead](EntityJsonhalDefinitionRead.md)
+`parentEntity` | [EntityDefinitionRead](EntityDefinitionRead.md)
 `isOwnedByCurrentUser` | boolean
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -21,12 +20,12 @@ import type { DefinitionJsonhalDefinitionRead } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "id": null,
   "slug": null,
   "jsonSchema": null,
   "parentEntity": null,
   "isOwnedByCurrentUser": null,
+  "links": null,
 } satisfies DefinitionJsonhalDefinitionRead
 
 console.log(example)

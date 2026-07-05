@@ -13,13 +13,13 @@
  */
 
 import { mapValues } from '../runtime';
-import type { DefinitionJsonhalDefinitionReadLinks } from './DefinitionJsonhalDefinitionReadLinks';
+import type { HalCollectionBaseSchemaNoPaginationLinks } from './HalCollectionBaseSchemaNoPaginationLinks';
 import {
-    DefinitionJsonhalDefinitionReadLinksFromJSON,
-    DefinitionJsonhalDefinitionReadLinksFromJSONTyped,
-    DefinitionJsonhalDefinitionReadLinksToJSON,
-    DefinitionJsonhalDefinitionReadLinksToJSONTyped,
-} from './DefinitionJsonhalDefinitionReadLinks';
+    HalCollectionBaseSchemaNoPaginationLinksFromJSON,
+    HalCollectionBaseSchemaNoPaginationLinksFromJSONTyped,
+    HalCollectionBaseSchemaNoPaginationLinksToJSON,
+    HalCollectionBaseSchemaNoPaginationLinksToJSONTyped,
+} from './HalCollectionBaseSchemaNoPaginationLinks';
 
 /**
  * Create user
@@ -29,28 +29,28 @@ import {
 export interface UserJsonhalUserCreate {
     /**
      * 
-     * @type {DefinitionJsonhalDefinitionReadLinks}
+     * @type {string}
      * @memberof UserJsonhalUserCreate
      */
-    links?: DefinitionJsonhalDefinitionReadLinks;
+    email: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserCreate
      */
-    email: string | null;
+    password: string;
     /**
      * 
      * @type {string}
      * @memberof UserJsonhalUserCreate
      */
-    password: string | null;
+    activationUrl?: string;
     /**
      * 
-     * @type {string}
+     * @type {HalCollectionBaseSchemaNoPaginationLinks}
      * @memberof UserJsonhalUserCreate
      */
-    activationUrl?: string | null;
+    links?: HalCollectionBaseSchemaNoPaginationLinks;
 }
 
 /**
@@ -72,10 +72,10 @@ export function UserJsonhalUserCreateFromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         
-        'links': json['_links'] == null ? undefined : DefinitionJsonhalDefinitionReadLinksFromJSON(json['_links']),
         'email': json['email'],
         'password': json['password'],
         'activationUrl': json['activationUrl'] == null ? undefined : json['activationUrl'],
+        'links': json['_links'] == null ? undefined : HalCollectionBaseSchemaNoPaginationLinksFromJSON(json['_links']),
     };
 }
 
@@ -90,10 +90,10 @@ export function UserJsonhalUserCreateToJSONTyped(value?: UserJsonhalUserCreate |
 
     return {
         
-        '_links': DefinitionJsonhalDefinitionReadLinksToJSON(value['links']),
         'email': value['email'],
         'password': value['password'],
         'activationUrl': value['activationUrl'],
+        '_links': HalCollectionBaseSchemaNoPaginationLinksToJSON(value['links']),
     };
 }
 

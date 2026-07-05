@@ -13,33 +13,27 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ApiEntitiesGetCollection200ResponseEmbedded } from './ApiEntitiesGetCollection200ResponseEmbedded';
+import type { EntityJsonhalEntityReadEntityReadParent } from './EntityJsonhalEntityReadEntityReadParent';
 import {
-    ApiEntitiesGetCollection200ResponseEmbeddedFromJSON,
-    ApiEntitiesGetCollection200ResponseEmbeddedFromJSONTyped,
-    ApiEntitiesGetCollection200ResponseEmbeddedToJSON,
-    ApiEntitiesGetCollection200ResponseEmbeddedToJSONTyped,
-} from './ApiEntitiesGetCollection200ResponseEmbedded';
-import type { ApiDefinitionsGetCollection200ResponseLinks } from './ApiDefinitionsGetCollection200ResponseLinks';
+    EntityJsonhalEntityReadEntityReadParentFromJSON,
+    EntityJsonhalEntityReadEntityReadParentFromJSONTyped,
+    EntityJsonhalEntityReadEntityReadParentToJSON,
+    EntityJsonhalEntityReadEntityReadParentToJSONTyped,
+} from './EntityJsonhalEntityReadEntityReadParent';
+import type { HalCollectionBaseSchemaAllOfLinks } from './HalCollectionBaseSchemaAllOfLinks';
 import {
-    ApiDefinitionsGetCollection200ResponseLinksFromJSON,
-    ApiDefinitionsGetCollection200ResponseLinksFromJSONTyped,
-    ApiDefinitionsGetCollection200ResponseLinksToJSON,
-    ApiDefinitionsGetCollection200ResponseLinksToJSONTyped,
-} from './ApiDefinitionsGetCollection200ResponseLinks';
+    HalCollectionBaseSchemaAllOfLinksFromJSON,
+    HalCollectionBaseSchemaAllOfLinksFromJSONTyped,
+    HalCollectionBaseSchemaAllOfLinksToJSON,
+    HalCollectionBaseSchemaAllOfLinksToJSONTyped,
+} from './HalCollectionBaseSchemaAllOfLinks';
 
 /**
- * 
+ * entity.jsonhal-entity.read_entity.read.parent collection.
  * @export
  * @interface ApiEntitiesGetCollection200Response
  */
 export interface ApiEntitiesGetCollection200Response {
-    /**
-     * 
-     * @type {ApiEntitiesGetCollection200ResponseEmbedded}
-     * @memberof ApiEntitiesGetCollection200Response
-     */
-    embedded: ApiEntitiesGetCollection200ResponseEmbedded;
     /**
      * 
      * @type {number}
@@ -48,16 +42,22 @@ export interface ApiEntitiesGetCollection200Response {
     totalItems?: number;
     /**
      * 
+     * @type {{ [key: string]: Array<EntityJsonhalEntityReadEntityReadParent>; }}
+     * @memberof ApiEntitiesGetCollection200Response
+     */
+    embedded: { [key: string]: Array<EntityJsonhalEntityReadEntityReadParent>; } | null;
+    /**
+     * 
+     * @type {HalCollectionBaseSchemaAllOfLinks}
+     * @memberof ApiEntitiesGetCollection200Response
+     */
+    links: HalCollectionBaseSchemaAllOfLinks;
+    /**
+     * 
      * @type {number}
      * @memberof ApiEntitiesGetCollection200Response
      */
     itemsPerPage?: number;
-    /**
-     * 
-     * @type {ApiDefinitionsGetCollection200ResponseLinks}
-     * @memberof ApiEntitiesGetCollection200Response
-     */
-    links: ApiDefinitionsGetCollection200ResponseLinks;
 }
 
 /**
@@ -79,10 +79,10 @@ export function ApiEntitiesGetCollection200ResponseFromJSONTyped(json: any, igno
     }
     return {
         
-        'embedded': ApiEntitiesGetCollection200ResponseEmbeddedFromJSON(json['_embedded']),
         'totalItems': json['totalItems'] == null ? undefined : json['totalItems'],
+        'embedded': json['_embedded'],
+        'links': HalCollectionBaseSchemaAllOfLinksFromJSON(json['_links']),
         'itemsPerPage': json['itemsPerPage'] == null ? undefined : json['itemsPerPage'],
-        'links': ApiDefinitionsGetCollection200ResponseLinksFromJSON(json['_links']),
     };
 }
 
@@ -97,10 +97,10 @@ export function ApiEntitiesGetCollection200ResponseToJSONTyped(value?: ApiEntiti
 
     return {
         
-        '_embedded': ApiEntitiesGetCollection200ResponseEmbeddedToJSON(value['embedded']),
         'totalItems': value['totalItems'],
+        '_embedded': value['embedded'],
+        '_links': HalCollectionBaseSchemaAllOfLinksToJSON(value['links']),
         'itemsPerPage': value['itemsPerPage'],
-        '_links': ApiDefinitionsGetCollection200ResponseLinksToJSON(value['links']),
     };
 }
 

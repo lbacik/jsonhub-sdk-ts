@@ -2,14 +2,13 @@
 # UserJsonhalUserResetPassword
 
 
-
 ## Properties
 
 Name | Type
 ------------ | -------------
-`links` | [DefinitionJsonhalDefinitionReadLinks](DefinitionJsonhalDefinitionReadLinks.md)
 `password` | string
 `token` | string
+`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
@@ -18,9 +17,9 @@ import type { UserJsonhalUserResetPassword } from 'jsonhub-api-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "links": null,
   "password": null,
   "token": null,
+  "links": null,
 } satisfies UserJsonhalUserResetPassword
 
 console.log(example)
