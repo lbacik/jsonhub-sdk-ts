@@ -1,26 +1,26 @@
 
-# UserJsonhalUserResetPassword
+# DefinitionDefinitionWrite
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`password` | string
-`token` | string
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`slug` | string
+`jsonSchema` | object
+`parentEntity` | string
 
 ## Example
 
 ```typescript
-import type { UserJsonhalUserResetPassword } from 'jsonhub-api-sdk'
+import type { DefinitionDefinitionWrite } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "password": null,
-  "token": null,
-  "links": null,
-} satisfies UserJsonhalUserResetPassword
+  "slug": null,
+  "jsonSchema": null,
+  "parentEntity": https://example.com/,
+} satisfies DefinitionDefinitionWrite
 
 console.log(example)
 
@@ -29,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhalUserResetPassword
+const exampleParsed = JSON.parse(exampleJSON) as DefinitionDefinitionWrite
 console.log(exampleParsed)
 ```
 

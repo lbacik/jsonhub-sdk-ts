@@ -1,26 +1,24 @@
 
-# CurrentUserLimits
+# UserUserResendActivation
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`entities` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
-`privateEntities` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
-`definitions` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
+`email` | string
+`activationUrl` | string
 
 ## Example
 
 ```typescript
-import type { CurrentUserLimits } from 'jsonhub-api-sdk'
+import type { UserUserResendActivation } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "entities": null,
-  "privateEntities": null,
-  "definitions": null,
-} satisfies CurrentUserLimits
+  "email": null,
+  "activationUrl": null,
+} satisfies UserUserResendActivation
 
 console.log(example)
 
@@ -29,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CurrentUserLimits
+const exampleParsed = JSON.parse(exampleJSON) as UserUserResendActivation
 console.log(exampleParsed)
 ```
 

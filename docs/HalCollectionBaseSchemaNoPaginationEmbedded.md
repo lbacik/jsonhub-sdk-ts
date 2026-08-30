@@ -1,26 +1,22 @@
 
-# PersonalAccessTokenJsonhalPersonalAccessTokenWrite
+# HalCollectionBaseSchemaNoPaginationEmbedded
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`name` | string
-`expiresAt` | Date
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`item` | Array&lt;any&gt;
 
 ## Example
 
 ```typescript
-import type { PersonalAccessTokenJsonhalPersonalAccessTokenWrite } from 'jsonhub-api-sdk'
+import type { HalCollectionBaseSchemaNoPaginationEmbedded } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "name": null,
-  "expiresAt": null,
-  "links": null,
-} satisfies PersonalAccessTokenJsonhalPersonalAccessTokenWrite
+  "item": null,
+} satisfies HalCollectionBaseSchemaNoPaginationEmbedded
 
 console.log(example)
 
@@ -29,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as PersonalAccessTokenJsonhalPersonalAccessTokenWrite
+const exampleParsed = JSON.parse(exampleJSON) as HalCollectionBaseSchemaNoPaginationEmbedded
 console.log(exampleParsed)
 ```
 

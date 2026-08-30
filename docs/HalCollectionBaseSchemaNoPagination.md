@@ -1,29 +1,26 @@
 
-# UserJsonhalUserCreate
+# HalCollectionBaseSchemaNoPagination
 
-Create user
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`email` | string
-`password` | string
-`activationUrl` | string
+`totalItems` | number
+`embedded` | [HalCollectionBaseSchemaNoPaginationEmbedded](HalCollectionBaseSchemaNoPaginationEmbedded.md)
 `links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
 ```typescript
-import type { UserJsonhalUserCreate } from 'jsonhub-api-sdk'
+import type { HalCollectionBaseSchemaNoPagination } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "email": null,
-  "password": null,
-  "activationUrl": null,
+  "totalItems": null,
+  "embedded": null,
   "links": null,
-} satisfies UserJsonhalUserCreate
+} satisfies HalCollectionBaseSchemaNoPagination
 
 console.log(example)
 
@@ -32,7 +29,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhalUserCreate
+const exampleParsed = JSON.parse(exampleJSON) as HalCollectionBaseSchemaNoPagination
 console.log(exampleParsed)
 ```
 

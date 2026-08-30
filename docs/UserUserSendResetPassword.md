@@ -1,5 +1,5 @@
 
-# UserJsonhalUserSendResetPassword
+# UserUserSendResetPassword
 
 
 ## Properties
@@ -8,19 +8,17 @@ Name | Type
 ------------ | -------------
 `email` | string
 `resetPasswordLink` | string
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
 ```typescript
-import type { UserJsonhalUserSendResetPassword } from 'jsonhub-api-sdk'
+import type { UserUserSendResetPassword } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
   "email": null,
   "resetPasswordLink": null,
-  "links": null,
-} satisfies UserJsonhalUserSendResetPassword
+} satisfies UserUserSendResetPassword
 
 console.log(example)
 
@@ -29,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhalUserSendResetPassword
+const exampleParsed = JSON.parse(exampleJSON) as UserUserSendResetPassword
 console.log(exampleParsed)
 ```
 

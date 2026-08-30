@@ -25,11 +25,11 @@ Retrieves the collection of personal access token resources.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-api-sdk';
-import type { ApiMeapiTokensGetCollectionRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiMeapiTokensGetCollectionRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -100,11 +100,11 @@ Removes the personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-api-sdk';
-import type { ApiMeapiTokensIdDeleteRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiMeapiTokensIdDeleteRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -173,11 +173,11 @@ Updates the personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-api-sdk';
-import type { ApiMeapiTokensIdPatchRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiMeapiTokensIdPatchRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -221,7 +221,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
+- **Content-Type**: `application/merge-patch+json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 
@@ -239,7 +239,7 @@ example().catch(console.error);
 
 ## apiMeapiTokensPost
 
-> PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead apiMeapiTokensPost(personalAccessTokenJsonhalPersonalAccessTokenWrite)
+> PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead apiMeapiTokensPost(personalAccessTokenPersonalAccessTokenWrite)
 
 Creates a personal access token resource.
 
@@ -251,11 +251,11 @@ Creates a personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-api-sdk';
-import type { ApiMeapiTokensPostRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiMeapiTokensPostRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -263,8 +263,8 @@ async function example() {
   const api = new PersonalAccessTokenApi(config);
 
   const body = {
-    // PersonalAccessTokenJsonhalPersonalAccessTokenWrite | The new personal access token resource
-    personalAccessTokenJsonhalPersonalAccessTokenWrite: ...,
+    // PersonalAccessTokenPersonalAccessTokenWrite | The new personal access token resource
+    personalAccessTokenPersonalAccessTokenWrite: ...,
   } satisfies ApiMeapiTokensPostRequest;
 
   try {
@@ -284,7 +284,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **personalAccessTokenJsonhalPersonalAccessTokenWrite** | [PersonalAccessTokenJsonhalPersonalAccessTokenWrite](PersonalAccessTokenJsonhalPersonalAccessTokenWrite.md) | The new personal access token resource | |
+| **personalAccessTokenPersonalAccessTokenWrite** | [PersonalAccessTokenPersonalAccessTokenWrite](PersonalAccessTokenPersonalAccessTokenWrite.md) | The new personal access token resource | |
 
 ### Return type
 
@@ -296,7 +296,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/hal+json`
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 

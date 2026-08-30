@@ -6,17 +6,29 @@
 
 Name | Type
 ------------ | -------------
-`limits` | [CurrentUserLimits](CurrentUserLimits.md)
+`id` | string
+`email` | string
+`password` | string
+`oldPassword` | string
+`token` | string
+`resetPasswordLink` | string
+`activationUrl` | string
 `links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
 
 ```typescript
-import type { UserJsonhal } from 'jsonhub-api-sdk'
+import type { UserJsonhal } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "limits": null,
+  "id": null,
+  "email": null,
+  "password": null,
+  "oldPassword": null,
+  "token": null,
+  "resetPasswordLink": null,
+  "activationUrl": null,
   "links": null,
 } satisfies UserJsonhal
 

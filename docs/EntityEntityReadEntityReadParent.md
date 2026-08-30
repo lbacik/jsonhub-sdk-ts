@@ -1,32 +1,34 @@
 
-# EntityJsonhalEntityCreate
+# EntityEntityReadEntityReadParent
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`id` | string
 `slug` | string
 `data` | object
-`definition` | string
+`definition` | [DefinitionEntityReadEntityReadParent](DefinitionEntityReadEntityReadParent.md)
 `parent` | string
 `_private` | boolean
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`isOwnedByCurrentUser` | boolean
 
 ## Example
 
 ```typescript
-import type { EntityJsonhalEntityCreate } from 'jsonhub-api-sdk'
+import type { EntityEntityReadEntityReadParent } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
+  "id": null,
   "slug": null,
   "data": null,
-  "definition": https://example.com/,
+  "definition": null,
   "parent": null,
   "_private": null,
-  "links": null,
-} satisfies EntityJsonhalEntityCreate
+  "isOwnedByCurrentUser": null,
+} satisfies EntityEntityReadEntityReadParent
 
 console.log(example)
 
@@ -35,7 +37,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as EntityJsonhalEntityCreate
+const exampleParsed = JSON.parse(exampleJSON) as EntityEntityReadEntityReadParent
 console.log(exampleParsed)
 ```
 

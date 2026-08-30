@@ -1,4 +1,4 @@
-# jsonhub-api-sdk@0.0.0
+# jsonhub-sdk-ts@0.10.1
 
 A TypeScript SDK client for the localhost API.
 
@@ -7,7 +7,7 @@ A TypeScript SDK client for the localhost API.
 First, install the SDK from npm.
 
 ```bash
-npm install jsonhub-api-sdk --save
+npm install jsonhub-sdk-ts --save
 ```
 
 Next, try it out.
@@ -17,11 +17,11 @@ Next, try it out.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -105,39 +105,17 @@ All URIs are relative to *http://localhost*
 - [ApiUsersmeGet200ResponseLimitsEntities](docs/ApiUsersmeGet200ResponseLimitsEntities.md)
 - [ApiUsersmeGet200ResponseLimitsPrivateEntities](docs/ApiUsersmeGet200ResponseLimitsPrivateEntities.md)
 - [ConstraintViolation](docs/ConstraintViolation.md)
-- [ConstraintViolationJsonld](docs/ConstraintViolationJsonld.md)
 - [ConstraintViolationViolationsInner](docs/ConstraintViolationViolationsInner.md)
-- [CurrentUserLimitUsage](docs/CurrentUserLimitUsage.md)
-- [CurrentUserLimitUsageJsonld](docs/CurrentUserLimitUsageJsonld.md)
-- [CurrentUserLimits](docs/CurrentUserLimits.md)
-- [CurrentUserLimitsJsonld](docs/CurrentUserLimitsJsonld.md)
-- [Definition](docs/Definition.md)
 - [DefinitionDefinitionRead](docs/DefinitionDefinitionRead.md)
 - [DefinitionDefinitionWrite](docs/DefinitionDefinitionWrite.md)
 - [DefinitionDefinitionWriteJsonMergePatch](docs/DefinitionDefinitionWriteJsonMergePatch.md)
 - [DefinitionEntityReadEntityReadParent](docs/DefinitionEntityReadEntityReadParent.md)
-- [DefinitionJsonapi](docs/DefinitionJsonapi.md)
-- [DefinitionJsonapiData](docs/DefinitionJsonapiData.md)
-- [DefinitionJsonapiDataRelationships](docs/DefinitionJsonapiDataRelationships.md)
-- [DefinitionJsonapiDataRelationshipsParentEntity](docs/DefinitionJsonapiDataRelationshipsParentEntity.md)
-- [DefinitionJsonapiDataRelationshipsParentEntityData](docs/DefinitionJsonapiDataRelationshipsParentEntityData.md)
 - [DefinitionJsonhalDefinitionRead](docs/DefinitionJsonhalDefinitionRead.md)
-- [DefinitionJsonhalDefinitionWrite](docs/DefinitionJsonhalDefinitionWrite.md)
-- [DefinitionJsonldDefinitionRead](docs/DefinitionJsonldDefinitionRead.md)
-- [DefinitionJsonldEntityReadEntityReadParent](docs/DefinitionJsonldEntityReadEntityReadParent.md)
-- [Entity](docs/Entity.md)
 - [EntityDefinitionRead](docs/EntityDefinitionRead.md)
 - [EntityEntityCreate](docs/EntityEntityCreate.md)
 - [EntityEntityReadEntityReadParent](docs/EntityEntityReadEntityReadParent.md)
 - [EntityEntityUpdateJsonMergePatch](docs/EntityEntityUpdateJsonMergePatch.md)
-- [EntityJsonapi](docs/EntityJsonapi.md)
-- [EntityJsonapiData](docs/EntityJsonapiData.md)
-- [EntityJsonapiDataRelationships](docs/EntityJsonapiDataRelationships.md)
-- [EntityJsonhalEntityCreate](docs/EntityJsonhalEntityCreate.md)
 - [EntityJsonhalEntityReadEntityReadParent](docs/EntityJsonhalEntityReadEntityReadParent.md)
-- [EntityJsonldDefinitionRead](docs/EntityJsonldDefinitionRead.md)
-- [EntityJsonldEntityReadEntityReadParent](docs/EntityJsonldEntityReadEntityReadParent.md)
-- [ErrorJsonld](docs/ErrorJsonld.md)
 - [HalCollectionBaseSchema](docs/HalCollectionBaseSchema.md)
 - [HalCollectionBaseSchemaAllOfLinks](docs/HalCollectionBaseSchemaAllOfLinks.md)
 - [HalCollectionBaseSchemaAllOfLinksFirst](docs/HalCollectionBaseSchemaAllOfLinksFirst.md)
@@ -145,20 +123,6 @@ All URIs are relative to *http://localhost*
 - [HalCollectionBaseSchemaNoPaginationEmbedded](docs/HalCollectionBaseSchemaNoPaginationEmbedded.md)
 - [HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf](docs/HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf.md)
 - [HalCollectionBaseSchemaNoPaginationLinks](docs/HalCollectionBaseSchemaNoPaginationLinks.md)
-- [HydraCollectionBaseSchema](docs/HydraCollectionBaseSchema.md)
-- [HydraCollectionBaseSchemaAllOfView](docs/HydraCollectionBaseSchemaAllOfView.md)
-- [HydraCollectionBaseSchemaNoPagination](docs/HydraCollectionBaseSchemaNoPagination.md)
-- [HydraCollectionBaseSchemaNoPaginationSearch](docs/HydraCollectionBaseSchemaNoPaginationSearch.md)
-- [HydraCollectionBaseSchemaNoPaginationSearchMappingInner](docs/HydraCollectionBaseSchemaNoPaginationSearchMappingInner.md)
-- [HydraItemBaseSchema](docs/HydraItemBaseSchema.md)
-- [HydraItemBaseSchemaContext](docs/HydraItemBaseSchemaContext.md)
-- [HydraItemBaseSchemaContextOneOf](docs/HydraItemBaseSchemaContextOneOf.md)
-- [JsonApiCollectionBaseSchema](docs/JsonApiCollectionBaseSchema.md)
-- [JsonApiCollectionBaseSchemaAllOfLinks](docs/JsonApiCollectionBaseSchemaAllOfLinks.md)
-- [JsonApiCollectionBaseSchemaAllOfMeta](docs/JsonApiCollectionBaseSchemaAllOfMeta.md)
-- [JsonApiCollectionBaseSchemaNoPagination](docs/JsonApiCollectionBaseSchemaNoPagination.md)
-- [JsonApiCollectionBaseSchemaNoPaginationLinks](docs/JsonApiCollectionBaseSchemaNoPaginationLinks.md)
-- [JsonApiCollectionBaseSchemaNoPaginationMeta](docs/JsonApiCollectionBaseSchemaNoPaginationMeta.md)
 - [ModelError](docs/ModelError.md)
 - [Oauth2Jwks200Response](docs/Oauth2Jwks200Response.md)
 - [Oauth2Jwks200ResponseKeysInner](docs/Oauth2Jwks200ResponseKeysInner.md)
@@ -168,31 +132,16 @@ All URIs are relative to *http://localhost*
 - [Oauth2RegisterRequest](docs/Oauth2RegisterRequest.md)
 - [Oauth2Token200Response](docs/Oauth2Token200Response.md)
 - [Oauth2TokenExchange200Response](docs/Oauth2TokenExchange200Response.md)
-- [PersonalAccessToken](docs/PersonalAccessToken.md)
-- [PersonalAccessTokenJsonapi](docs/PersonalAccessTokenJsonapi.md)
-- [PersonalAccessTokenJsonapiData](docs/PersonalAccessTokenJsonapiData.md)
 - [PersonalAccessTokenJsonhalPersonalAccessTokenRead](docs/PersonalAccessTokenJsonhalPersonalAccessTokenRead.md)
 - [PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
-- [PersonalAccessTokenJsonhalPersonalAccessTokenWrite](docs/PersonalAccessTokenJsonhalPersonalAccessTokenWrite.md)
-- [PersonalAccessTokenJsonldPersonalAccessTokenRead](docs/PersonalAccessTokenJsonldPersonalAccessTokenRead.md)
-- [PersonalAccessTokenJsonldPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenJsonldPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
 - [PersonalAccessTokenPersonalAccessTokenRead](docs/PersonalAccessTokenPersonalAccessTokenRead.md)
 - [PersonalAccessTokenPersonalAccessTokenReadPersonalAccessTokenCreateRead](docs/PersonalAccessTokenPersonalAccessTokenReadPersonalAccessTokenCreateRead.md)
 - [PersonalAccessTokenPersonalAccessTokenWrite](docs/PersonalAccessTokenPersonalAccessTokenWrite.md)
 - [PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch](docs/PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch.md)
 - [User](docs/User.md)
-- [UserJsonapi](docs/UserJsonapi.md)
-- [UserJsonapiData](docs/UserJsonapiData.md)
 - [UserJsonhal](docs/UserJsonhal.md)
-- [UserJsonhalUserCreate](docs/UserJsonhalUserCreate.md)
 - [UserJsonhalUserEmpty](docs/UserJsonhalUserEmpty.md)
 - [UserJsonhalUserRead](docs/UserJsonhalUserRead.md)
-- [UserJsonhalUserResendActivation](docs/UserJsonhalUserResendActivation.md)
-- [UserJsonhalUserResetPassword](docs/UserJsonhalUserResetPassword.md)
-- [UserJsonhalUserSendResetPassword](docs/UserJsonhalUserSendResetPassword.md)
-- [UserJsonld](docs/UserJsonld.md)
-- [UserJsonldUserEmpty](docs/UserJsonldUserEmpty.md)
-- [UserJsonldUserRead](docs/UserJsonldUserRead.md)
 - [UserUserCreate](docs/UserUserCreate.md)
 - [UserUserRead](docs/UserUserRead.md)
 - [UserUserResendActivation](docs/UserUserResendActivation.md)
@@ -216,8 +165,8 @@ This TypeScript SDK client supports the [Fetch API](https://fetch.spec.whatwg.or
 and is automatically generated by the
 [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `0.0.0`
-- Package version: `0.0.0`
+- API version: `0.10.1`
+- Package version: `0.10.1`
 - Generator version: `7.21.0`
 - Build package: `org.openapitools.codegen.languages.TypeScriptFetchClientCodegen`
 

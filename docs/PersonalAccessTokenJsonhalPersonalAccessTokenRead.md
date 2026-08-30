@@ -16,7 +16,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { PersonalAccessTokenJsonhalPersonalAccessTokenRead } from 'jsonhub-api-sdk'
+import type { PersonalAccessTokenJsonhalPersonalAccessTokenRead } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {

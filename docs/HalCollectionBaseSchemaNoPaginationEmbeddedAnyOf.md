@@ -1,24 +1,22 @@
 
-# CurrentUserLimitUsage
+# HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`used` | number
-`limit` | number
+`item` | Array&lt;any&gt;
 
 ## Example
 
 ```typescript
-import type { CurrentUserLimitUsage } from 'jsonhub-api-sdk'
+import type { HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "used": null,
-  "limit": null,
-} satisfies CurrentUserLimitUsage
+  "item": null,
+} satisfies HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf
 
 console.log(example)
 
@@ -27,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as CurrentUserLimitUsage
+const exampleParsed = JSON.parse(exampleJSON) as HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf
 console.log(exampleParsed)
 ```
 

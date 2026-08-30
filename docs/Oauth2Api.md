@@ -28,11 +28,11 @@ Browser endpoint for Authorization Code with PKCE. Requires a JsonHub session an
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2AuthorizeRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2AuthorizeRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   const body = {
@@ -120,11 +120,11 @@ Publishes public RSA keys for local JWT validation by MCP and other resource ser
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2JwksRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2JwksRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   try {
@@ -179,11 +179,11 @@ Discovery document for ChatGPT/MCP OAuth2 Authorization Code with PKCE, JWKS, re
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2MetadataRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2MetadataRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   try {
@@ -238,11 +238,11 @@ Controlled Dynamic Client Registration. Redirect URIs must be HTTPS, except HTTP
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2RegisterOperationRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2RegisterOperationRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   const body = {
@@ -306,11 +306,11 @@ Revokes the matching consent grant when the token can be validated. Already-issu
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2RevokeRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2RevokeRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   const body = {
@@ -382,11 +382,11 @@ Exchanges a single-use authorization code for a short-lived RS256 JWT access tok
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2TokenRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2TokenRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   const body = {
@@ -463,11 +463,11 @@ OAuth 2.0 Token Exchange style endpoint. The MCP backend authenticates as a conf
 import {
   Configuration,
   Oauth2Api,
-} from 'jsonhub-api-sdk';
-import type { Oauth2TokenExchangeRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { Oauth2TokenExchangeRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const api = new Oauth2Api();
 
   const body = {

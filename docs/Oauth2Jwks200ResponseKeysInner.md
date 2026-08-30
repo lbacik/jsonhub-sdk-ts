@@ -16,7 +16,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { Oauth2Jwks200ResponseKeysInner } from 'jsonhub-api-sdk'
+import type { Oauth2Jwks200ResponseKeysInner } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {

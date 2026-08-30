@@ -26,11 +26,11 @@ Retrieves the collection of definition resources.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -112,11 +112,11 @@ Removes the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -185,11 +185,11 @@ Retrieves a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsIdGetRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsIdGetRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -257,11 +257,11 @@ Updates the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -305,7 +305,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
+- **Content-Type**: `application/merge-patch+json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 
@@ -323,7 +323,7 @@ example().catch(console.error);
 
 ## apiDefinitionsPost
 
-> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionJsonhalDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionDefinitionWrite)
 
 Creates a definition resource.
 
@@ -335,11 +335,11 @@ Creates a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-api-sdk';
-import type { ApiDefinitionsPostRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiDefinitionsPostRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -347,8 +347,8 @@ async function example() {
   const api = new DefinitionApi(config);
 
   const body = {
-    // DefinitionJsonhalDefinitionWrite | The new definition resource
-    definitionJsonhalDefinitionWrite: ...,
+    // DefinitionDefinitionWrite | The new definition resource
+    definitionDefinitionWrite: ...,
   } satisfies ApiDefinitionsPostRequest;
 
   try {
@@ -368,7 +368,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **definitionJsonhalDefinitionWrite** | [DefinitionJsonhalDefinitionWrite](DefinitionJsonhalDefinitionWrite.md) | The new definition resource | |
+| **definitionDefinitionWrite** | [DefinitionDefinitionWrite](DefinitionDefinitionWrite.md) | The new definition resource | |
 
 ### Return type
 
@@ -380,7 +380,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/hal+json`
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 

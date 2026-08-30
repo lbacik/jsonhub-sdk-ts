@@ -1,26 +1,31 @@
 
-# UserJsonhalUserResendActivation
+# ModelError
 
+A representation of common errors.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`email` | string
-`activationUrl` | string
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`title` | string
+`detail` | string
+`status` | number
+`instance` | string
+`type` | string
 
 ## Example
 
 ```typescript
-import type { UserJsonhalUserResendActivation } from 'jsonhub-api-sdk'
+import type { ModelError } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "email": null,
-  "activationUrl": null,
-  "links": null,
-} satisfies UserJsonhalUserResendActivation
+  "title": null,
+  "detail": null,
+  "status": null,
+  "instance": null,
+  "type": null,
+} satisfies ModelError
 
 console.log(example)
 
@@ -29,7 +34,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as UserJsonhalUserResendActivation
+const exampleParsed = JSON.parse(exampleJSON) as ModelError
 console.log(exampleParsed)
 ```
 

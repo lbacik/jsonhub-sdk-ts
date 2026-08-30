@@ -1,28 +1,24 @@
 
-# DefinitionJsonhalDefinitionWrite
+# PersonalAccessTokenPersonalAccessTokenWrite
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`slug` | string
-`jsonSchema` | object
-`parentEntity` | string
-`links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
+`name` | string
+`expiresAt` | Date
 
 ## Example
 
 ```typescript
-import type { DefinitionJsonhalDefinitionWrite } from 'jsonhub-api-sdk'
+import type { PersonalAccessTokenPersonalAccessTokenWrite } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "slug": null,
-  "jsonSchema": null,
-  "parentEntity": https://example.com/,
-  "links": null,
-} satisfies DefinitionJsonhalDefinitionWrite
+  "name": null,
+  "expiresAt": null,
+} satisfies PersonalAccessTokenPersonalAccessTokenWrite
 
 console.log(example)
 
@@ -31,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as DefinitionJsonhalDefinitionWrite
+const exampleParsed = JSON.parse(exampleJSON) as PersonalAccessTokenPersonalAccessTokenWrite
 console.log(exampleParsed)
 ```
 

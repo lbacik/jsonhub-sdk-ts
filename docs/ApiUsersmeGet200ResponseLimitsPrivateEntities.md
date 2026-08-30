@@ -12,7 +12,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { ApiUsersmeGet200ResponseLimitsPrivateEntities } from 'jsonhub-api-sdk'
+import type { ApiUsersmeGet200ResponseLimitsPrivateEntities } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {

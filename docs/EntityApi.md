@@ -26,11 +26,11 @@ Retrieves the collection of entity resources.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-api-sdk';
-import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -118,11 +118,11 @@ Removes the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-api-sdk';
-import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -191,11 +191,11 @@ Retrieves a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-api-sdk';
-import type { ApiEntitiesIdGetRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiEntitiesIdGetRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -263,11 +263,11 @@ Updates the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-api-sdk';
-import type { ApiEntitiesIdPatchRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiEntitiesIdPatchRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -311,7 +311,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/merge-patch+json`, `application/vnd.api+json`
+- **Content-Type**: `application/merge-patch+json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 
@@ -329,7 +329,7 @@ example().catch(console.error);
 
 ## apiEntitiesPost
 
-> EntityJsonhalEntityReadEntityReadParent apiEntitiesPost(entityJsonhalEntityCreate)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesPost(entityEntityCreate)
 
 Creates a entity resource.
 
@@ -341,11 +341,11 @@ Creates a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-api-sdk';
-import type { ApiEntitiesPostRequest } from 'jsonhub-api-sdk';
+} from 'jsonhub-sdk-ts';
+import type { ApiEntitiesPostRequest } from 'jsonhub-sdk-ts';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-api-sdk SDK...");
+  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -353,8 +353,8 @@ async function example() {
   const api = new EntityApi(config);
 
   const body = {
-    // EntityJsonhalEntityCreate | The new entity resource
-    entityJsonhalEntityCreate: ...,
+    // EntityEntityCreate | The new entity resource
+    entityEntityCreate: ...,
   } satisfies ApiEntitiesPostRequest;
 
   try {
@@ -374,7 +374,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **entityJsonhalEntityCreate** | [EntityJsonhalEntityCreate](EntityJsonhalEntityCreate.md) | The new entity resource | |
+| **entityEntityCreate** | [EntityEntityCreate](EntityEntityCreate.md) | The new entity resource | |
 
 ### Return type
 
@@ -386,7 +386,7 @@ example().catch(console.error);
 
 ### HTTP request headers
 
-- **Content-Type**: `application/hal+json`
+- **Content-Type**: `application/json`
 - **Accept**: `application/hal+json`, `application/problem+json`
 
 
