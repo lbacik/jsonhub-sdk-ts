@@ -1,0 +1,64 @@
+name: Publish to npm
+
+# Reacts to the v<version> tag jsonhub-sdk-generator's scripts/publish-to-target.sh
+# pushes here after a release commit (see that repository's jsonhub-sdk-generator
+# issue #7 and its README "Publishing the TypeScript SDK Release to npm" section).
+# Publication is gated on the package building and passing its smoke test: a
+# broken SDK Release can't be unpublished cleanly, so that gate is the whole
+# point.
+#
+# Authenticates to npm via Trusted Publishing (OIDC) rather than a long-lived
+# NPM_TOKEN secret: id-token: write below lets npm's CLI exchange a GitHub
+# Actions OIDC token for a short-lived publish token, so no credential is
+# stored in this repository at all. This requires a one-time setup on
+# npmjs.com - see README's "Publishing the TypeScript SDK Release to npm".
+on:
+  push:
+    tags:
+      - "v*"
+
+# One release per tag; a re-run of the same tag should not race a fresh one.
+concurrency:
+  group: publish-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write # required for Trusted Publishing (OIDC) and provenance
+    steps:
+      - name: Check out the tagged commit
+        uses: actions/checkout@v4
+
+      # Trusted Publishing needs npm CLI >= 11.5.1 and Node >= 22.14.0; pin
+      # high enough that the bundled npm already satisfies it.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ">=22.14.0"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify the tag, version, and Source API Version agree
+        run: node .github/scripts/verify-package-metadata.cjs
+
+      # scripts/smoke-test.cjs packs the built output, installs it into a
+      # scratch project, and requires it from there - the closest a pre-publish
+      # check can get to "installable from npm and importable in a fresh
+      # project" without actually publishing first.
+      - name: Smoke test the built package
+        run: node .github/scripts/smoke-test.cjs
+
+      # No NODE_AUTH_TOKEN: Trusted Publishing authenticates via the OIDC
+      # token GitHub Actions provides through id-token: write, and npm
+      # publishes provenance attestations automatically - no --provenance flag
+      # needed.
+      - name: Publish to npm
+        run: npm publish
