@@ -5,8 +5,13 @@ name: Publish to npm
 # issue #7 and its README "Publishing the TypeScript SDK Release to npm" section).
 # Publication is gated on the package building and passing its smoke test: a
 # broken SDK Release can't be unpublished cleanly, so that gate is the whole
-# point. The npm credential lives here, in the SDK Target's own repository,
-# rather than in the generator that produces the code.
+# point.
+#
+# Authenticates to npm via Trusted Publishing (OIDC) rather than a long-lived
+# NPM_TOKEN secret: id-token: write below lets npm's CLI exchange a GitHub
+# Actions OIDC token for a short-lived publish token, so no credential is
+# stored in this repository at all. This requires a one-time setup on
+# npmjs.com - see README's "Publishing the TypeScript SDK Release to npm".
 on:
   push:
     tags:
@@ -23,14 +28,16 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
-      id-token: write # required for npm provenance
+      id-token: write # required for Trusted Publishing (OIDC) and provenance
     steps:
       - name: Check out the tagged commit
         uses: actions/checkout@v4
 
+      # Trusted Publishing needs npm CLI >= 11.5.1 and Node >= 22.14.0; pin
+      # high enough that the bundled npm already satisfies it.
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ">=22.14.0"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
@@ -49,7 +56,9 @@ jobs:
       - name: Smoke test the built package
         run: node .github/scripts/smoke-test.cjs
 
+      # No NODE_AUTH_TOKEN: Trusted Publishing authenticates via the OIDC
+      # token GitHub Actions provides through id-token: write, and npm
+      # publishes provenance attestations automatically - no --provenance flag
+      # needed.
       - name: Publish to npm
-        run: npm publish --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
