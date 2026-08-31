@@ -35,10 +35,15 @@ jobs:
 
       # Trusted Publishing needs npm CLI >= 11.5.1 and Node >= 22.14.0; pin
       # high enough that the bundled npm already satisfies it.
+      #
+      # Deliberately no registry-url: it makes setup-node write an .npmrc
+      # containing "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}", and
+      # with no NODE_AUTH_TOKEN set (see the publish step) that expands to an
+      # empty token which can shadow the OIDC credential Trusted Publishing
+      # mints. npm publishes to registry.npmjs.org by default anyway.
       - uses: actions/setup-node@v4
         with:
           node-version: ">=22.14.0"
-          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci
