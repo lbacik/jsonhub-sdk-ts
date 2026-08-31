@@ -1,5 +1,5 @@
 
-# ApiUsersmeGet200ResponseLimitsPrivateEntities
+# CurrentUserLimitUsage
 
 
 ## Properties
@@ -12,13 +12,13 @@ Name | Type
 ## Example
 
 ```typescript
-import type { ApiUsersmeGet200ResponseLimitsPrivateEntities } from 'jsonhub-sdk-ts'
+import type { CurrentUserLimitUsage } from 'jsonhub-sdk-ts'
 
 // TODO: Update the object below with actual values
 const example = {
-  "used": 1,
-  "limit": 2,
-} satisfies ApiUsersmeGet200ResponseLimitsPrivateEntities
+  "used": 3,
+  "limit": 100,
+} satisfies CurrentUserLimitUsage
 
 console.log(example)
 
@@ -27,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ApiUsersmeGet200ResponseLimitsPrivateEntities
+const exampleParsed = JSON.parse(exampleJSON) as CurrentUserLimitUsage
 console.log(exampleParsed)
 ```
 

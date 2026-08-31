@@ -3,7 +3,7 @@
   "info": {
     "title": "JsonHub API",
     "description": "",
-    "version": "0.10.1"
+    "version": "0.10.2"
   },
   "servers": [
     {
@@ -1917,65 +1917,7 @@
                   "type": "object",
                   "properties": {
                     "limits": {
-                      "type": "object",
-                      "properties": {
-                        "entities": {
-                          "type": "object",
-                          "properties": {
-                            "used": {
-                              "type": "integer",
-                              "example": 3
-                            },
-                            "limit": {
-                              "type": "integer",
-                              "example": 100
-                            }
-                          },
-                          "required": [
-                            "used",
-                            "limit"
-                          ]
-                        },
-                        "privateEntities": {
-                          "type": "object",
-                          "properties": {
-                            "used": {
-                              "type": "integer",
-                              "example": 1
-                            },
-                            "limit": {
-                              "type": "integer",
-                              "example": 2
-                            }
-                          },
-                          "required": [
-                            "used",
-                            "limit"
-                          ]
-                        },
-                        "definitions": {
-                          "type": "object",
-                          "properties": {
-                            "used": {
-                              "type": "integer",
-                              "example": 1
-                            },
-                            "limit": {
-                              "type": "integer",
-                              "example": 10
-                            }
-                          },
-                          "required": [
-                            "used",
-                            "limit"
-                          ]
-                        }
-                      },
-                      "required": [
-                        "entities",
-                        "privateEntities",
-                        "definitions"
-                      ]
+                      "$ref": "#/components/schemas/CurrentUserLimits"
                     }
                   },
                   "required": [
@@ -2396,6 +2338,42 @@
               "string",
               "null"
             ]
+          }
+        }
+      },
+      "CurrentUserLimitUsage": {
+        "type": "object",
+        "required": [
+          "used",
+          "limit"
+        ],
+        "properties": {
+          "used": {
+            "example": 3,
+            "type": "integer"
+          },
+          "limit": {
+            "example": 100,
+            "type": "integer"
+          }
+        }
+      },
+      "CurrentUserLimits": {
+        "type": "object",
+        "required": [
+          "entities",
+          "privateEntities",
+          "definitions"
+        ],
+        "properties": {
+          "entities": {
+            "$ref": "#/components/schemas/CurrentUserLimitUsage"
+          },
+          "privateEntities": {
+            "$ref": "#/components/schemas/CurrentUserLimitUsage"
+          },
+          "definitions": {
+            "$ref": "#/components/schemas/CurrentUserLimitUsage"
           }
         }
       },
@@ -2998,7 +2976,10 @@
             "example": "https://example.com/"
           },
           "parent": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "iri-reference"
           },
           "private": {
@@ -3037,7 +3018,10 @@
             ]
           },
           "parent": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "iri-reference"
           },
           "private": {
@@ -3063,7 +3047,10 @@
             "type": "object"
           },
           "parent": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "iri-reference"
           },
           "private": {

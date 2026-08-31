@@ -6,7 +6,7 @@
 
 Name | Type
 ------------ | -------------
-`limits` | [ApiUsersmeGet200ResponseLimits](ApiUsersmeGet200ResponseLimits.md)
+`limits` | [CurrentUserLimits](CurrentUserLimits.md)
 
 ## Example
 
