@@ -26,11 +26,11 @@ Retrieves the collection of definition resources.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiDefinitionsGetCollectionRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -112,11 +112,11 @@ Removes the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiDefinitionsIdDeleteRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -185,11 +185,11 @@ Retrieves a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiDefinitionsIdGetRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiDefinitionsIdGetRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -257,11 +257,11 @@ Updates the definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiDefinitionsIdPatchRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -335,11 +335,11 @@ Creates a definition resource.
 import {
   Configuration,
   DefinitionApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiDefinitionsPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiDefinitionsPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",

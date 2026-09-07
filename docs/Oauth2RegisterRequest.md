@@ -16,7 +16,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { Oauth2RegisterRequest } from 'jsonhub-sdk-ts'
+import type { Oauth2RegisterRequest } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

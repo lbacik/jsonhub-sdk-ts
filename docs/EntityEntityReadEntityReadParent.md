@@ -17,7 +17,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityEntityReadEntityReadParent } from 'jsonhub-sdk-ts'
+import type { EntityEntityReadEntityReadParent } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

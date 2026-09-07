@@ -12,7 +12,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { UserJsonhalUserEmpty } from 'jsonhub-sdk-ts'
+import type { UserJsonhalUserEmpty } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

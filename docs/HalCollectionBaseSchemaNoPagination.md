@@ -13,7 +13,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { HalCollectionBaseSchemaNoPagination } from 'jsonhub-sdk-ts'
+import type { HalCollectionBaseSchemaNoPagination } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -28,11 +28,11 @@ Removes the user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersIdDeleteRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersIdDeleteRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -101,11 +101,11 @@ Updates the user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersIdPatchRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersIdPatchRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -179,11 +179,11 @@ Creates a user resource.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new UserApi();
 
   const body = {
@@ -248,11 +248,11 @@ Returns quota usage and limits for the authenticated user.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersmeGetRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersmeGetRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -314,11 +314,11 @@ This endpoint resends the activation email to the user.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersresendActivationPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersresendActivationPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new UserApi();
 
   const body = {
@@ -383,11 +383,11 @@ This endpoint resets the password of the user using the token sent by email.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUsersresetPasswordPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUsersresetPasswordPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new UserApi();
 
   const body = {
@@ -452,11 +452,11 @@ This endpoint sends a reset password email to the user.
 import {
   Configuration,
   UserApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiUserssendResetPasswordPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiUserssendResetPasswordPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new UserApi();
 
   const body = {

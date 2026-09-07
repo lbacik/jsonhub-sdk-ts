@@ -12,7 +12,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { PersonalAccessTokenPersonalAccessTokenWrite } from 'jsonhub-sdk-ts'
+import type { PersonalAccessTokenPersonalAccessTokenWrite } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

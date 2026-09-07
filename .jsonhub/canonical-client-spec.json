@@ -3,7 +3,7 @@
   "info": {
     "title": "JsonHub API",
     "description": "",
-    "version": "0.10.2"
+    "version": "0.10.4"
   },
   "servers": [
     {
@@ -2491,7 +2491,8 @@
                 "type": "object",
                 "properties": {
                   "item": {
-                    "type": "array"
+                    "type": "array",
+                    "items": {}
                   }
                 }
               },

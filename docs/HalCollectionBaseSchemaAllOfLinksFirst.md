@@ -11,7 +11,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { HalCollectionBaseSchemaAllOfLinksFirst } from 'jsonhub-sdk-ts'
+import type { HalCollectionBaseSchemaAllOfLinksFirst } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -13,7 +13,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { UserUserRead } from 'jsonhub-sdk-ts'
+import type { UserUserRead } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

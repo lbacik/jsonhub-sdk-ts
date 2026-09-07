@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { ApiDefinitionsGetCollection200Response } from 'jsonhub-sdk-ts'
+import type { ApiDefinitionsGetCollection200Response } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -16,7 +16,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { DefinitionJsonhalDefinitionRead } from 'jsonhub-sdk-ts'
+import type { DefinitionJsonhalDefinitionRead } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

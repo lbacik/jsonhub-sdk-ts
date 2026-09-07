@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityEntityCreate } from 'jsonhub-sdk-ts'
+import type { EntityEntityCreate } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

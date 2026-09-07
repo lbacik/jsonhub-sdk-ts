@@ -25,11 +25,11 @@ Retrieves the collection of personal access token resources.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiMeapiTokensGetCollectionRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiMeapiTokensGetCollectionRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -100,11 +100,11 @@ Removes the personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiMeapiTokensIdDeleteRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiMeapiTokensIdDeleteRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -173,11 +173,11 @@ Updates the personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiMeapiTokensIdPatchRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiMeapiTokensIdPatchRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -251,11 +251,11 @@ Creates a personal access token resource.
 import {
   Configuration,
   PersonalAccessTokenApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiMeapiTokensPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiMeapiTokensPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",

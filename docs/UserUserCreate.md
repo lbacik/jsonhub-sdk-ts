@@ -14,7 +14,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { UserUserCreate } from 'jsonhub-sdk-ts'
+import type { UserUserCreate } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

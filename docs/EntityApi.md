@@ -26,11 +26,11 @@ Retrieves the collection of entity resources.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiEntitiesGetCollectionRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -118,11 +118,11 @@ Removes the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiEntitiesIdDeleteRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -191,11 +191,11 @@ Retrieves a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiEntitiesIdGetRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiEntitiesIdGetRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -263,11 +263,11 @@ Updates the entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiEntitiesIdPatchRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiEntitiesIdPatchRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",
@@ -341,11 +341,11 @@ Creates a entity resource.
 import {
   Configuration,
   EntityApi,
-} from 'jsonhub-sdk-ts';
-import type { ApiEntitiesPostRequest } from 'jsonhub-sdk-ts';
+} from 'jsonhub-sdk';
+import type { ApiEntitiesPostRequest } from 'jsonhub-sdk';
 
 async function example() {
-  console.log("🚀 Testing jsonhub-sdk-ts SDK...");
+  console.log("🚀 Testing jsonhub-sdk SDK...");
   const config = new Configuration({ 
     // Configure HTTP bearer authorization: access_token
     accessToken: "YOUR BEARER TOKEN",

@@ -13,7 +13,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { DefinitionDefinitionWrite } from 'jsonhub-sdk-ts'
+import type { DefinitionDefinitionWrite } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

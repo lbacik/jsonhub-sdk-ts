@@ -14,7 +14,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EntityEntityUpdateJsonMergePatch } from 'jsonhub-sdk-ts'
+import type { EntityEntityUpdateJsonMergePatch } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {

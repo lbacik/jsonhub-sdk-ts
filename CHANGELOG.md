@@ -3,5 +3,5 @@
 <!-- compatibility-table:start -->
 | SDK Release | API Release | Date |
 | --- | --- | --- |
-| 0.3.0 | v0.10.2 | 2026-08-31 |
+| 0.3.1 | v0.10.4 | 2026-09-07 |
 <!-- compatibility-table:end -->

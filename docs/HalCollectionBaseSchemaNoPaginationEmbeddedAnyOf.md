@@ -11,7 +11,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf } from 'jsonhub-sdk-ts'
+import type { HalCollectionBaseSchemaNoPaginationEmbeddedAnyOf } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
