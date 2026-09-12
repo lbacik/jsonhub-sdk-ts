@@ -240,7 +240,7 @@ No authorization required
 
 Get current user information
 
-Returns quota usage and limits for the authenticated user.
+Returns the authenticated user\&#39;s account id, email, and quota usage and limits. &#x60;email&#x60; is returned regardless of token scope for now; see #45, after which it will require a scope covering profile access instead of being disclosed to every token holder.
 
 ### Example
 
@@ -292,7 +292,7 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Current user quota usage. |  -  |
+| **200** | Current user identity and quota usage. |  -  |
 | **401** | Authentication required. |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |

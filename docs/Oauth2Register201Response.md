@@ -26,7 +26,7 @@ const example = {
   "redirectUris": null,
   "grantTypes": [authorization_code],
   "responseTypes": [code],
-  "scope": idea-forge-mcp,
+  "scope": mcp jsonhub:entities:write,
   "tokenEndpointAuthMethod": none,
 } satisfies Oauth2Register201Response
 

@@ -11,8 +11,6 @@ Name | Type
 `password` | string
 `oldPassword` | string
 `token` | string
-`resetPasswordLink` | string
-`activationUrl` | string
 
 ## Example
 
@@ -26,8 +24,6 @@ const example = {
   "password": null,
   "oldPassword": null,
   "token": null,
-  "resetPasswordLink": null,
-  "activationUrl": null,
 } satisfies User
 
 console.log(example)

@@ -7,7 +7,6 @@
 Name | Type
 ------------ | -------------
 `email` | string
-`resetPasswordLink` | string
 
 ## Example
 
@@ -17,7 +16,6 @@ import type { UserUserSendResetPassword } from 'jsonhub-sdk'
 // TODO: Update the object below with actual values
 const example = {
   "email": null,
-  "resetPasswordLink": null,
 } satisfies UserUserSendResetPassword
 
 console.log(example)

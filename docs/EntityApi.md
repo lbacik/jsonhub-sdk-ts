@@ -14,11 +14,11 @@ All URIs are relative to *http://localhost*
 
 ## apiEntitiesGetCollection
 
-> ApiEntitiesGetCollection200Response apiEntitiesGetCollection(qid, _private, owned, page, limit, properties, definition, parent)
+> ApiEntitiesGetCollection200Response apiEntitiesGetCollection(qid, _private, owned, root, page, limit, properties, definition, parent)
 
 Retrieves the collection of entity resources.
 
-Retrieves the collection of entity resources.
+Results are ordered deterministically, oldest first.
 
 ### Example
 
@@ -44,6 +44,8 @@ async function example() {
     _private: true,
     // boolean | Show only entities owned by the current user (optional)
     owned: true,
+    // boolean | Show only Root Entities (entities without a Parent Entity) (optional)
+    root: true,
     // number | The collection page number (optional)
     page: 56,
     // number | The number of items per page (optional)
@@ -76,6 +78,7 @@ example().catch(console.error);
 | **qid** | `string` | Filter by slug/id (partial match) | [Optional] [Defaults to `undefined`] |
 | **_private** | `boolean` | Show only private entities (owned by the current user) | [Optional] [Defaults to `undefined`] |
 | **owned** | `boolean` | Show only entities owned by the current user | [Optional] [Defaults to `undefined`] |
+| **root** | `boolean` | Show only Root Entities (entities without a Parent Entity) | [Optional] [Defaults to `undefined`] |
 | **page** | `number` | The collection page number | [Optional] [Defaults to `1`] |
 | **limit** | `number` | The number of items per page | [Optional] [Defaults to `10`] |
 | **properties** | `Array<string>` | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [Optional] |

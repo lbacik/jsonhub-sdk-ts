@@ -6,6 +6,8 @@
 
 Name | Type
 ------------ | -------------
+`id` | string
+`email` | string
 `limits` | [CurrentUserLimits](CurrentUserLimits.md)
 
 ## Example
@@ -15,6 +17,8 @@ import type { ApiUsersmeGet200Response } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
+  "id": null,
+  "email": null,
   "limits": null,
 } satisfies ApiUsersmeGet200Response
 

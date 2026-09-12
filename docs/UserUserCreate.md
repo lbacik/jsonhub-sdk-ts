@@ -9,7 +9,6 @@ Name | Type
 ------------ | -------------
 `email` | string
 `password` | string
-`activationUrl` | string
 
 ## Example
 
@@ -20,7 +19,6 @@ import type { UserUserCreate } from 'jsonhub-sdk'
 const example = {
   "email": null,
   "password": null,
-  "activationUrl": null,
 } satisfies UserUserCreate
 
 console.log(example)

@@ -21,7 +21,7 @@ const example = {
   "accessToken": null,
   "tokenType": Bearer,
   "expiresIn": 900,
-  "scope": idea-forge-mcp,
+  "scope": mcp,
 } satisfies Oauth2Token200Response
 
 console.log(example)

@@ -14,11 +14,11 @@ All URIs are relative to *http://localhost*
 
 ## apiDefinitionsGetCollection
 
-> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(qid, owned, page, limit, properties, parentEntity)
+> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(qid, owned, root, page, limit, properties, parentEntity)
 
 Retrieves the collection of definition resources.
 
-Retrieves the collection of definition resources.
+Results are ordered deterministically, oldest first.
 
 ### Example
 
@@ -42,6 +42,8 @@ async function example() {
     qid: qid_example,
     // boolean | Show only definitions owned by the current user (optional)
     owned: true,
+    // boolean | Show only Root Definitions (definitions without a Parent Entity) (optional)
+    root: true,
     // number | The collection page number (optional)
     page: 56,
     // number | The number of items per page (optional)
@@ -71,6 +73,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **qid** | `string` | Filter by slug/id (partial match) | [Optional] [Defaults to `undefined`] |
 | **owned** | `boolean` | Show only definitions owned by the current user | [Optional] [Defaults to `undefined`] |
+| **root** | `boolean` | Show only Root Definitions (definitions without a Parent Entity) | [Optional] [Defaults to `undefined`] |
 | **page** | `number` | The collection page number | [Optional] [Defaults to `1`] |
 | **limit** | `number` | The number of items per page | [Optional] [Defaults to `10`] |
 | **properties** | `Array<string>` | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [Optional] |

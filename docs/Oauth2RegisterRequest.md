@@ -20,11 +20,11 @@ import type { Oauth2RegisterRequest } from 'jsonhub-sdk'
 
 // TODO: Update the object below with actual values
 const example = {
-  "clientName": ChatGPT Idea Forge MCP,
-  "redirectUris": ["https://chat.openai.com/aip/g-abc/oauth/callback"],
+  "clientName": Generic MCP Client,
+  "redirectUris": ["https://client.example.test/callback"],
   "grantTypes": ["authorization_code"],
   "responseTypes": [code],
-  "scope": idea-forge-mcp,
+  "scope": mcp jsonhub:entities:write,
   "tokenEndpointAuthMethod": none,
 } satisfies Oauth2RegisterRequest
 

@@ -11,8 +11,6 @@ Name | Type
 `password` | string
 `oldPassword` | string
 `token` | string
-`resetPasswordLink` | string
-`activationUrl` | string
 `links` | [HalCollectionBaseSchemaNoPaginationLinks](HalCollectionBaseSchemaNoPaginationLinks.md)
 
 ## Example
@@ -27,8 +25,6 @@ const example = {
   "password": null,
   "oldPassword": null,
   "token": null,
-  "resetPasswordLink": null,
-  "activationUrl": null,
   "links": null,
 } satisfies UserJsonhal
 

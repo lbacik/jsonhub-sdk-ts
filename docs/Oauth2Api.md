@@ -41,19 +41,19 @@ async function example() {
     // string | Registered OAuth client identifier.
     clientId: jh_client_id,
     // string | Exact registered redirect URI.
-    redirectUri: https://chat.openai.com/aip/g-abc/oauth/callback,
-    // string | Requested scopes. MVP supports idea-forge-mcp.
-    scope: idea-forge-mcp,
+    redirectUri: https://client.example.test/callback,
+    // string | Scopes registered for the client. MCP requests include mcp; direct API clients request JsonHub capability scopes.
+    scope: jsonhub:entities:read jsonhub:entities:write jsonhub:definitions:write,
     // string | Opaque client state returned unchanged.
     state: client-csrf-state,
     // string | PKCE S256 code challenge.
     codeChallenge: codeChallenge_example,
     // 'S256' | Must be S256.
     codeChallengeMethod: S256,
-    // string | Optional MCP resource/audience. (optional)
-    resource: idea-forge-mcp,
+    // string | Target Resource Server. Direct API clients use jsonhub-api. (optional)
+    resource: jsonhub-api,
     // string | Optional alias for resource. (optional)
-    audience: idea-forge-mcp,
+    audience: jsonhub-api,
   } satisfies Oauth2AuthorizeRequest;
 
   try {
@@ -76,11 +76,11 @@ example().catch(console.error);
 | **responseType** | `code` | Must be code. | [Defaults to `undefined`] [Enum: code] |
 | **clientId** | `string` | Registered OAuth client identifier. | [Defaults to `undefined`] |
 | **redirectUri** | `string` | Exact registered redirect URI. | [Defaults to `undefined`] |
-| **scope** | `string` | Requested scopes. MVP supports idea-forge-mcp. | [Defaults to `undefined`] |
+| **scope** | `string` | Scopes registered for the client. MCP requests include mcp; direct API clients request JsonHub capability scopes. | [Defaults to `undefined`] |
 | **state** | `string` | Opaque client state returned unchanged. | [Defaults to `undefined`] |
 | **codeChallenge** | `string` | PKCE S256 code challenge. | [Defaults to `undefined`] |
 | **codeChallengeMethod** | `S256` | Must be S256. | [Defaults to `undefined`] [Enum: S256] |
-| **resource** | `string` | Optional MCP resource/audience. | [Optional] [Defaults to `undefined`] |
+| **resource** | `string` | Target Resource Server. Direct API clients use jsonhub-api. | [Optional] [Defaults to `undefined`] |
 | **audience** | `string` | Optional alias for resource. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
@@ -171,7 +171,7 @@ No authorization required
 
 OAuth2 authorization server metadata
 
-Discovery document for ChatGPT/MCP OAuth2 Authorization Code with PKCE, JWKS, revocation, and token exchange.
+Discovery document for MCP OAuth2 Authorization Code with PKCE, JWKS, revocation, and token exchange.
 
 ### Example
 

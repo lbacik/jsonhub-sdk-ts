@@ -16,6 +16,7 @@ Name | Type
 `responseTypesSupported` | Array&lt;string&gt;
 `grantTypesSupported` | Array&lt;string&gt;
 `codeChallengeMethodsSupported` | Array&lt;string&gt;
+`audiencesSupported` | Array&lt;string&gt;
 `scopesSupported` | Array&lt;string&gt;
 
 ## Example
@@ -35,7 +36,8 @@ const example = {
   "responseTypesSupported": ["code"],
   "grantTypesSupported": ["authorization_code","urn:ietf:params:oauth:grant-type:token-exchange"],
   "codeChallengeMethodsSupported": ["S256"],
-  "scopesSupported": ["idea-forge-mcp"],
+  "audiencesSupported": ["jsonhub-api"],
+  "scopesSupported": ["mcp","frontend","jsonhub:entities:read","jsonhub:entities:write","jsonhub:definitions:write"],
 } satisfies Oauth2Metadata200Response
 
 console.log(example)

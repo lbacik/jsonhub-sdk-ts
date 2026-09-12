@@ -7,7 +7,6 @@
 Name | Type
 ------------ | -------------
 `email` | string
-`activationUrl` | string
 
 ## Example
 
@@ -17,7 +16,6 @@ import type { UserUserResendActivation } from 'jsonhub-sdk'
 // TODO: Update the object below with actual values
 const example = {
   "email": null,
-  "activationUrl": null,
 } satisfies UserUserResendActivation
 
 console.log(example)
