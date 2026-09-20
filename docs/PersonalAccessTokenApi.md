@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 ## apiMeapiTokensGetCollection
 
-> ApiMeapiTokensGetCollection200Response apiMeapiTokensGetCollection(page, limit)
+> ApiMeapiTokensGetCollection200Response apiMeapiTokensGetCollection(page, limit, accept)
 
 Retrieves the collection of personal access token resources.
 
@@ -41,6 +41,8 @@ async function example() {
     page: 56,
     // number | The number of items per page (optional)
     limit: 56,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiMeapiTokensGetCollectionRequest;
 
   try {
@@ -62,6 +64,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **page** | `number` | The collection page number | [Optional] [Defaults to `1`] |
 | **limit** | `number` | The number of items per page | [Optional] [Defaults to `30`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -161,7 +164,7 @@ example().catch(console.error);
 
 ## apiMeapiTokensIdPatch
 
-> PersonalAccessTokenJsonhalPersonalAccessTokenRead apiMeapiTokensIdPatch(id, personalAccessTokenPersonalAccessTokenWriteJsonMergePatch)
+> PersonalAccessTokenJsonhalPersonalAccessTokenRead apiMeapiTokensIdPatch(id, personalAccessTokenPersonalAccessTokenWriteJsonMergePatch, accept)
 
 Updates the personal access token resource.
 
@@ -189,6 +192,8 @@ async function example() {
     id: id_example,
     // PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch | The updated personal access token resource
     personalAccessTokenPersonalAccessTokenWriteJsonMergePatch: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiMeapiTokensIdPatchRequest;
 
   try {
@@ -210,6 +215,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | personal access token identifier | [Defaults to `undefined`] |
 | **personalAccessTokenPersonalAccessTokenWriteJsonMergePatch** | [PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch](PersonalAccessTokenPersonalAccessTokenWriteJsonMergePatch.md) | The updated personal access token resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -239,7 +245,7 @@ example().catch(console.error);
 
 ## apiMeapiTokensPost
 
-> PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead apiMeapiTokensPost(personalAccessTokenPersonalAccessTokenWrite)
+> PersonalAccessTokenJsonhalPersonalAccessTokenReadPersonalAccessTokenCreateRead apiMeapiTokensPost(personalAccessTokenPersonalAccessTokenWrite, accept)
 
 Creates a personal access token resource.
 
@@ -265,6 +271,8 @@ async function example() {
   const body = {
     // PersonalAccessTokenPersonalAccessTokenWrite | The new personal access token resource
     personalAccessTokenPersonalAccessTokenWrite: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiMeapiTokensPostRequest;
 
   try {
@@ -285,6 +293,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **personalAccessTokenPersonalAccessTokenWrite** | [PersonalAccessTokenPersonalAccessTokenWrite](PersonalAccessTokenPersonalAccessTokenWrite.md) | The new personal access token resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 

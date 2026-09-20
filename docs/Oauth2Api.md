@@ -108,7 +108,7 @@ No authorization required
 
 ## oauth2Jwks
 
-> Oauth2Jwks200Response oauth2Jwks()
+> Oauth2Jwks200Response oauth2Jwks(accept)
 
 Get OAuth signing keys
 
@@ -127,8 +127,13 @@ async function example() {
   console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new Oauth2Api();
 
+  const body = {
+    // string (optional)
+    accept: accept_example,
+  } satisfies Oauth2JwksRequest;
+
   try {
-    const data = await api.oauth2Jwks();
+    const data = await api.oauth2Jwks(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -141,7 +146,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
@@ -167,7 +175,7 @@ No authorization required
 
 ## oauth2Metadata
 
-> Oauth2Metadata200Response oauth2Metadata()
+> Oauth2Metadata200Response oauth2Metadata(accept)
 
 OAuth2 authorization server metadata
 
@@ -186,8 +194,13 @@ async function example() {
   console.log("🚀 Testing jsonhub-sdk SDK...");
   const api = new Oauth2Api();
 
+  const body = {
+    // string (optional)
+    accept: accept_example,
+  } satisfies Oauth2MetadataRequest;
+
   try {
-    const data = await api.oauth2Metadata();
+    const data = await api.oauth2Metadata(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -200,7 +213,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
@@ -226,7 +242,7 @@ No authorization required
 
 ## oauth2Register
 
-> Oauth2Register201Response oauth2Register(oauth2RegisterRequest)
+> Oauth2Register201Response oauth2Register(oauth2RegisterRequest, accept)
 
 Register OAuth client
 
@@ -248,6 +264,8 @@ async function example() {
   const body = {
     // Oauth2RegisterRequest | Client metadata
     oauth2RegisterRequest: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies Oauth2RegisterOperationRequest;
 
   try {
@@ -268,6 +286,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **oauth2RegisterRequest** | [Oauth2RegisterRequest](Oauth2RegisterRequest.md) | Client metadata | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
@@ -294,7 +313,7 @@ No authorization required
 
 ## oauth2Revoke
 
-> object oauth2Revoke(token, clientId, clientSecret, audience)
+> object oauth2Revoke(token, clientId, accept, clientSecret, audience)
 
 Revoke OAuth consent
 
@@ -318,6 +337,8 @@ async function example() {
     token: token_example,
     // string
     clientId: clientId_example,
+    // string (optional)
+    accept: accept_example,
     // string (optional)
     clientSecret: clientSecret_example,
     // string (optional)
@@ -343,6 +364,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **token** | `string` |  | [Defaults to `undefined`] |
 | **clientId** | `string` |  | [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 | **clientSecret** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **audience** | `string` |  | [Optional] [Defaults to `undefined`] |
 
@@ -370,7 +392,7 @@ No authorization required
 
 ## oauth2Token
 
-> Oauth2Token200Response oauth2Token(grantType, code, redirectUri, clientId, codeVerifier)
+> Oauth2Token200Response oauth2Token(grantType, code, redirectUri, clientId, codeVerifier, accept)
 
 Exchange authorization code
 
@@ -400,6 +422,8 @@ async function example() {
     clientId: clientId_example,
     // string
     codeVerifier: codeVerifier_example,
+    // string (optional)
+    accept: accept_example,
   } satisfies Oauth2TokenRequest;
 
   try {
@@ -424,6 +448,7 @@ example().catch(console.error);
 | **redirectUri** | `string` |  | [Defaults to `undefined`] |
 | **clientId** | `string` |  | [Defaults to `undefined`] |
 | **codeVerifier** | `string` |  | [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
@@ -451,7 +476,7 @@ No authorization required
 
 ## oauth2TokenExchange
 
-> Oauth2TokenExchange200Response oauth2TokenExchange(grantType, clientId, subjectToken, subjectTokenType, audience, clientSecret, subjectAudience)
+> Oauth2TokenExchange200Response oauth2TokenExchange(grantType, clientId, subjectToken, subjectTokenType, audience, accept, clientSecret, subjectAudience)
 
 Exchange MCP token for JsonHub API token
 
@@ -482,6 +507,8 @@ async function example() {
     // string
     audience: audience_example,
     // string (optional)
+    accept: accept_example,
+    // string (optional)
     clientSecret: clientSecret_example,
     // string (optional)
     subjectAudience: subjectAudience_example,
@@ -509,6 +536,7 @@ example().catch(console.error);
 | **subjectToken** | `string` |  | [Defaults to `undefined`] |
 | **subjectTokenType** | `string` |  | [Defaults to `undefined`] |
 | **audience** | `jsonhub-api` |  | [Defaults to `undefined`] [Enum: jsonhub-api] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 | **clientSecret** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **subjectAudience** | `string` |  | [Optional] [Defaults to `undefined`] |
 

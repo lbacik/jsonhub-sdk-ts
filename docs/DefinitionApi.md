@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 ## apiDefinitionsGetCollection
 
-> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(qid, owned, root, page, limit, properties, parentEntity)
+> ApiDefinitionsGetCollection200Response apiDefinitionsGetCollection(qid, owned, root, page, limit, properties, parentEntity, accept)
 
 Retrieves the collection of definition resources.
 
@@ -52,6 +52,8 @@ async function example() {
     properties: ...,
     // string | Filter by parentEntity (uuid) (optional)
     parentEntity: parentEntity_example,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiDefinitionsGetCollectionRequest;
 
   try {
@@ -78,6 +80,7 @@ example().catch(console.error);
 | **limit** | `number` | The number of items per page | [Optional] [Defaults to `10`] |
 | **properties** | `Array<string>` | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [Optional] |
 | **parentEntity** | `string` | Filter by parentEntity (uuid) | [Optional] [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -176,7 +179,7 @@ example().catch(console.error);
 
 ## apiDefinitionsIdGet
 
-> DefinitionJsonhalDefinitionRead apiDefinitionsIdGet(id)
+> DefinitionDefinitionRead apiDefinitionsIdGet(id, accept)
 
 Retrieves a definition resource.
 
@@ -202,6 +205,8 @@ async function example() {
   const body = {
     // string | definition identifier
     id: id_example,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiDefinitionsIdGetRequest;
 
   try {
@@ -222,10 +227,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | definition identifier | [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
-[**DefinitionJsonhalDefinitionRead**](DefinitionJsonhalDefinitionRead.md)
+[**DefinitionDefinitionRead**](DefinitionDefinitionRead.md)
 
 ### Authorization
 
@@ -234,7 +240,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/hal+json`, `application/problem+json`
+- **Accept**: `application/json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -248,7 +254,7 @@ example().catch(console.error);
 
 ## apiDefinitionsIdPatch
 
-> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWriteJsonMergePatch)
+> DefinitionJsonhalDefinitionRead apiDefinitionsIdPatch(id, definitionDefinitionWriteJsonMergePatch, accept)
 
 Updates the definition resource.
 
@@ -276,6 +282,8 @@ async function example() {
     id: id_example,
     // DefinitionDefinitionWriteJsonMergePatch | The updated definition resource
     definitionDefinitionWriteJsonMergePatch: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiDefinitionsIdPatchRequest;
 
   try {
@@ -297,6 +305,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | definition identifier | [Defaults to `undefined`] |
 | **definitionDefinitionWriteJsonMergePatch** | [DefinitionDefinitionWriteJsonMergePatch](DefinitionDefinitionWriteJsonMergePatch.md) | The updated definition resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -326,7 +335,7 @@ example().catch(console.error);
 
 ## apiDefinitionsPost
 
-> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionDefinitionWrite)
+> DefinitionJsonhalDefinitionRead apiDefinitionsPost(definitionDefinitionWrite, accept)
 
 Creates a definition resource.
 
@@ -352,6 +361,8 @@ async function example() {
   const body = {
     // DefinitionDefinitionWrite | The new definition resource
     definitionDefinitionWrite: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiDefinitionsPostRequest;
 
   try {
@@ -372,6 +383,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **definitionDefinitionWrite** | [DefinitionDefinitionWrite](DefinitionDefinitionWrite.md) | The new definition resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 

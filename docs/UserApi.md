@@ -89,7 +89,7 @@ example().catch(console.error);
 
 ## apiUsersIdPatch
 
-> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdateJsonMergePatch)
+> UserJsonhalUserEmpty apiUsersIdPatch(id, userUserUpdateJsonMergePatch, accept)
 
 Updates the user resource.
 
@@ -117,6 +117,8 @@ async function example() {
     id: id_example,
     // UserUserUpdateJsonMergePatch | The updated user resource
     userUserUpdateJsonMergePatch: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiUsersIdPatchRequest;
 
   try {
@@ -138,6 +140,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | user identifier | [Defaults to `undefined`] |
 | **userUserUpdateJsonMergePatch** | [UserUserUpdateJsonMergePatch](UserUserUpdateJsonMergePatch.md) | The updated user resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -167,7 +170,7 @@ example().catch(console.error);
 
 ## apiUsersPost
 
-> UserJsonhalUserRead apiUsersPost(userUserCreate)
+> UserJsonhalUserRead apiUsersPost(userUserCreate, accept)
 
 Creates a user resource.
 
@@ -189,6 +192,8 @@ async function example() {
   const body = {
     // UserUserCreate | The new user resource
     userUserCreate: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiUsersPostRequest;
 
   try {
@@ -209,6 +214,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userUserCreate** | [UserUserCreate](UserUserCreate.md) | The new user resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -236,7 +242,7 @@ No authorization required
 
 ## apiUsersmeGet
 
-> ApiUsersmeGet200Response apiUsersmeGet()
+> ApiUsersmeGet200Response apiUsersmeGet(accept)
 
 Get current user information
 
@@ -259,8 +265,13 @@ async function example() {
   });
   const api = new UserApi(config);
 
+  const body = {
+    // string (optional)
+    accept: accept_example,
+  } satisfies ApiUsersmeGetRequest;
+
   try {
-    const data = await api.apiUsersmeGet();
+    const data = await api.apiUsersmeGet(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -273,7 +284,10 @@ example().catch(console.error);
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
@@ -302,7 +316,7 @@ This endpoint does not need any parameter.
 
 ## apiUsersresendActivationPost
 
-> UserJsonhal apiUsersresendActivationPost(userUserResendActivation)
+> UserJsonhal apiUsersresendActivationPost(userUserResendActivation, accept)
 
 Resend activation email
 
@@ -324,6 +338,8 @@ async function example() {
   const body = {
     // UserUserResendActivation | The new user resource
     userUserResendActivation: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiUsersresendActivationPostRequest;
 
   try {
@@ -344,6 +360,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userUserResendActivation** | [UserUserResendActivation](UserUserResendActivation.md) | The new user resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -371,7 +388,7 @@ No authorization required
 
 ## apiUsersresetPasswordPost
 
-> UserJsonhalUserEmpty apiUsersresetPasswordPost(userUserResetPassword)
+> UserJsonhalUserEmpty apiUsersresetPasswordPost(userUserResetPassword, accept)
 
 Reset password (with token)
 
@@ -393,6 +410,8 @@ async function example() {
   const body = {
     // UserUserResetPassword | The new user resource
     userUserResetPassword: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiUsersresetPasswordPostRequest;
 
   try {
@@ -413,6 +432,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userUserResetPassword** | [UserUserResetPassword](UserUserResetPassword.md) | The new user resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -440,7 +460,7 @@ No authorization required
 
 ## apiUserssendResetPasswordPost
 
-> UserJsonhal apiUserssendResetPasswordPost(userUserSendResetPassword)
+> UserJsonhal apiUserssendResetPasswordPost(userUserSendResetPassword, accept)
 
 Send reset password email
 
@@ -462,6 +482,8 @@ async function example() {
   const body = {
     // UserUserSendResetPassword | The new user resource
     userUserSendResetPassword: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiUserssendResetPasswordPostRequest;
 
   try {
@@ -482,6 +504,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **userUserSendResetPassword** | [UserUserSendResetPassword](UserUserSendResetPassword.md) | The new user resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 

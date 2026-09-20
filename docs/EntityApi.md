@@ -14,7 +14,7 @@ All URIs are relative to *http://localhost*
 
 ## apiEntitiesGetCollection
 
-> ApiEntitiesGetCollection200Response apiEntitiesGetCollection(qid, _private, owned, root, page, limit, properties, definition, parent)
+> ApiEntitiesGetCollection200Response apiEntitiesGetCollection(qid, _private, owned, root, page, limit, properties, definition, parent, accept)
 
 Retrieves the collection of entity resources.
 
@@ -56,6 +56,8 @@ async function example() {
     definition: definition_example,
     // string | Filter by parent (uuid) (optional)
     parent: parent_example,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiEntitiesGetCollectionRequest;
 
   try {
@@ -84,6 +86,7 @@ example().catch(console.error);
 | **properties** | `Array<string>` | Allows you to reduce the response to contain only the properties you need. If your desired property is nested, you can address it using nested arrays. Example: properties[]&#x3D;{propertyName}&amp;properties[]&#x3D;{anotherPropertyName}&amp;properties[{nestedPropertyParent}][]&#x3D;{nestedProperty} | [Optional] |
 | **definition** | `string` | Filter by definition (uuid) | [Optional] [Defaults to `undefined`] |
 | **parent** | `string` | Filter by parent (uuid) | [Optional] [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -182,7 +185,7 @@ example().catch(console.error);
 
 ## apiEntitiesIdGet
 
-> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdGet(id)
+> EntityEntityReadEntityReadParent apiEntitiesIdGet(id, accept)
 
 Retrieves a entity resource.
 
@@ -208,6 +211,8 @@ async function example() {
   const body = {
     // string | entity identifier
     id: id_example,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiEntitiesIdGetRequest;
 
   try {
@@ -228,10 +233,11 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | entity identifier | [Defaults to `undefined`] |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 
 ### Return type
 
-[**EntityJsonhalEntityReadEntityReadParent**](EntityJsonhalEntityReadEntityReadParent.md)
+[**EntityEntityReadEntityReadParent**](EntityEntityReadEntityReadParent.md)
 
 ### Authorization
 
@@ -240,7 +246,7 @@ example().catch(console.error);
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/hal+json`, `application/problem+json`
+- **Accept**: `application/json`, `application/problem+json`
 
 
 ### HTTP response details
@@ -254,7 +260,7 @@ example().catch(console.error);
 
 ## apiEntitiesIdPatch
 
-> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdateJsonMergePatch)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesIdPatch(id, entityEntityUpdateJsonMergePatch, accept)
 
 Updates the entity resource.
 
@@ -282,6 +288,8 @@ async function example() {
     id: id_example,
     // EntityEntityUpdateJsonMergePatch | The updated entity resource
     entityEntityUpdateJsonMergePatch: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiEntitiesIdPatchRequest;
 
   try {
@@ -303,6 +311,7 @@ example().catch(console.error);
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | entity identifier | [Defaults to `undefined`] |
 | **entityEntityUpdateJsonMergePatch** | [EntityEntityUpdateJsonMergePatch](EntityEntityUpdateJsonMergePatch.md) | The updated entity resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
@@ -332,7 +341,7 @@ example().catch(console.error);
 
 ## apiEntitiesPost
 
-> EntityJsonhalEntityReadEntityReadParent apiEntitiesPost(entityEntityCreate)
+> EntityJsonhalEntityReadEntityReadParent apiEntitiesPost(entityEntityCreate, accept)
 
 Creates a entity resource.
 
@@ -358,6 +367,8 @@ async function example() {
   const body = {
     // EntityEntityCreate | The new entity resource
     entityEntityCreate: ...,
+    // string (optional)
+    accept: accept_example,
   } satisfies ApiEntitiesPostRequest;
 
   try {
@@ -378,6 +389,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **entityEntityCreate** | [EntityEntityCreate](EntityEntityCreate.md) | The new entity resource | |
+| **accept** | `string` |  | [Optional] [Defaults to `&#39;application/hal+json&#39;`] |
 
 ### Return type
 
