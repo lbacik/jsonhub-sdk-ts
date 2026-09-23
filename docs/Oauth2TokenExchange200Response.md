@@ -10,6 +10,7 @@ Name | Type
 `tokenType` | string
 `expiresIn` | number
 `scope` | string
+`refreshToken` | string
 `issuedTokenType` | string
 
 ## Example
@@ -23,6 +24,7 @@ const example = {
   "tokenType": Bearer,
   "expiresIn": 300,
   "scope": jsonhub:entities:write jsonhub:definitions:write,
+  "refreshToken": null,
   "issuedTokenType": urn:ietf:params:oauth:token-type:access_token,
 } satisfies Oauth2TokenExchange200Response
 

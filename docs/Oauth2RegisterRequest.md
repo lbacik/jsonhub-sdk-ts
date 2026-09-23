@@ -22,7 +22,7 @@ import type { Oauth2RegisterRequest } from 'jsonhub-sdk'
 const example = {
   "clientName": Generic MCP Client,
   "redirectUris": ["https://client.example.test/callback"],
-  "grantTypes": ["authorization_code"],
+  "grantTypes": ["authorization_code","refresh_token"],
   "responseTypes": [code],
   "scope": mcp jsonhub:entities:write,
   "tokenEndpointAuthMethod": none,

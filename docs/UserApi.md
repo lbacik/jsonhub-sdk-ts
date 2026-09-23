@@ -160,6 +160,7 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | user resource updated |  -  |
+| **204** | No content. |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
@@ -235,6 +236,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **201** | user resource created |  -  |
 | **400** | Invalid input |  -  |
+| **409** | The request conflicts with existing state. |  -  |
 | **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -453,6 +455,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **204** | No content. |  -  |
 | **400** | Invalid input |  -  |
+| **404** | No matching password-reset token was found. |  -  |
+| **410** | The password-reset token has expired. |  -  |
 | **422** | Unprocessable entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `entities` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
+`rootEntities` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
 `privateEntities` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
 `definitions` | [CurrentUserLimitUsage](CurrentUserLimitUsage.md)
 
@@ -18,6 +19,7 @@ import type { CurrentUserLimits } from 'jsonhub-sdk'
 // TODO: Update the object below with actual values
 const example = {
   "entities": null,
+  "rootEntities": null,
   "privateEntities": null,
   "definitions": null,
 } satisfies CurrentUserLimits

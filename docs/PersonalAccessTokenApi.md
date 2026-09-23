@@ -84,6 +84,7 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | personal access token collection |  -  |
+| **401** | Authentication is required. |  -  |
 | **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -315,6 +316,7 @@ example().catch(console.error);
 | **201** | personal access token resource created |  -  |
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
+| **409** | The request conflicts with existing state. |  -  |
 | **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

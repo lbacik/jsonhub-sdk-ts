@@ -10,6 +10,7 @@ Name | Type
 `tokenType` | string
 `expiresIn` | number
 `scope` | string
+`refreshToken` | string
 
 ## Example
 
@@ -22,6 +23,7 @@ const example = {
   "tokenType": Bearer,
   "expiresIn": 900,
   "scope": mcp,
+  "refreshToken": null,
 } satisfies Oauth2Token200Response
 
 console.log(example)

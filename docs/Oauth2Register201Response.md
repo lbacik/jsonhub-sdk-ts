@@ -24,7 +24,7 @@ const example = {
   "clientId": jh_client_id,
   "clientSecret": null,
   "redirectUris": null,
-  "grantTypes": [authorization_code],
+  "grantTypes": [authorization_code, refresh_token],
   "responseTypes": [code],
   "scope": mcp jsonhub:entities:write,
   "tokenEndpointAuthMethod": none,

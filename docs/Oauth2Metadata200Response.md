@@ -34,10 +34,10 @@ const example = {
   "revocationEndpoint": https://jsonhub.example/oauth2/revoke,
   "tokenExchangeEndpoint": https://jsonhub.example/oauth2/token-exchange,
   "responseTypesSupported": ["code"],
-  "grantTypesSupported": ["authorization_code","urn:ietf:params:oauth:grant-type:token-exchange"],
+  "grantTypesSupported": ["authorization_code","refresh_token","urn:ietf:params:oauth:grant-type:token-exchange"],
   "codeChallengeMethodsSupported": ["S256"],
   "audiencesSupported": ["jsonhub-api"],
-  "scopesSupported": ["mcp","frontend","jsonhub:entities:read","jsonhub:entities:write","jsonhub:definitions:write"],
+  "scopesSupported": ["mcp","frontend","offline_access","jsonhub:entities:read","jsonhub:entities:write","jsonhub:definitions:write"],
 } satisfies Oauth2Metadata200Response
 
 console.log(example)

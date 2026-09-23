@@ -100,6 +100,8 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | definition collection |  -  |
+| **400** | The filter query is invalid. |  -  |
+| **401** | Authentication is required. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -173,6 +175,7 @@ example().catch(console.error);
 | **204** | definition resource deleted |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
+| **409** | The request conflicts with existing state. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
@@ -328,6 +331,7 @@ example().catch(console.error);
 | **400** | Invalid input |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not found |  -  |
+| **409** | The request conflicts with existing state. |  -  |
 | **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -404,7 +408,9 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **201** | definition resource created |  -  |
 | **400** | Invalid input |  -  |
+| **401** | Authentication is required. |  -  |
 | **403** | Forbidden |  -  |
+| **409** | The request conflicts with existing state. |  -  |
 | **422** | An error occurred |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

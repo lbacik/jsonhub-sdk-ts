@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 | [**oauth2Metadata**](Oauth2Api.md#oauth2metadata) | **GET** /.well-known/oauth-authorization-server | OAuth2 authorization server metadata |
 | [**oauth2Register**](Oauth2Api.md#oauth2registeroperation) | **POST** /oauth2/register | Register OAuth client |
 | [**oauth2Revoke**](Oauth2Api.md#oauth2revoke) | **POST** /oauth2/revoke | Revoke OAuth consent |
-| [**oauth2Token**](Oauth2Api.md#oauth2token) | **POST** /oauth2/token | Exchange authorization code |
+| [**oauth2Token**](Oauth2Api.md#oauth2token) | **POST** /oauth2/token | Exchange authorization code or refresh token |
 | [**oauth2TokenExchange**](Oauth2Api.md#oauth2tokenexchange) | **POST** /oauth2/token-exchange | Exchange MCP token for JsonHub API token |
 
 
@@ -313,7 +313,7 @@ No authorization required
 
 ## oauth2Revoke
 
-> object oauth2Revoke(token, clientId, accept, clientSecret, audience)
+> object oauth2Revoke(token, clientId, accept, clientSecret, audience, tokenTypeHint)
 
 Revoke OAuth consent
 
@@ -343,6 +343,8 @@ async function example() {
     clientSecret: clientSecret_example,
     // string (optional)
     audience: audience_example,
+    // string (optional)
+    tokenTypeHint: tokenTypeHint_example,
   } satisfies Oauth2RevokeRequest;
 
   try {
@@ -367,6 +369,7 @@ example().catch(console.error);
 | **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
 | **clientSecret** | `string` |  | [Optional] [Defaults to `undefined`] |
 | **audience** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **tokenTypeHint** | `access_token`, `refresh_token` |  | [Optional] [Defaults to `undefined`] [Enum: access_token, refresh_token] |
 
 ### Return type
 
@@ -392,11 +395,11 @@ No authorization required
 
 ## oauth2Token
 
-> Oauth2Token200Response oauth2Token(grantType, code, redirectUri, clientId, codeVerifier, accept)
+> Oauth2Token200Response oauth2Token(accept, grantType, code, redirectUri, clientId, codeVerifier, refreshToken, scope)
 
-Exchange authorization code
+Exchange authorization code or refresh token
 
-Exchanges a single-use authorization code for a short-lived RS256 JWT access token. Public clients must provide the PKCE verifier.
+Exchanges a single-use authorization code for a short-lived RS256 JWT access token, or rotates a refresh token. Public clients must provide the PKCE verifier for authorization-code exchange.
 
 ### Example
 
@@ -412,18 +415,22 @@ async function example() {
   const api = new Oauth2Api();
 
   const body = {
-    // string
-    grantType: grantType_example,
-    // string
-    code: code_example,
-    // string
-    redirectUri: redirectUri_example,
-    // string
-    clientId: clientId_example,
-    // string
-    codeVerifier: codeVerifier_example,
     // string (optional)
     accept: accept_example,
+    // string (optional)
+    grantType: grantType_example,
+    // string (optional)
+    code: code_example,
+    // string (optional)
+    redirectUri: redirectUri_example,
+    // string (optional)
+    clientId: clientId_example,
+    // string (optional)
+    codeVerifier: codeVerifier_example,
+    // string (optional)
+    refreshToken: refreshToken_example,
+    // string | Optional subset of the original grant. (optional)
+    scope: scope_example,
   } satisfies Oauth2TokenRequest;
 
   try {
@@ -443,12 +450,14 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **grantType** | `authorization_code` |  | [Defaults to `undefined`] [Enum: authorization_code] |
-| **code** | `string` |  | [Defaults to `undefined`] |
-| **redirectUri** | `string` |  | [Defaults to `undefined`] |
-| **clientId** | `string` |  | [Defaults to `undefined`] |
-| **codeVerifier** | `string` |  | [Defaults to `undefined`] |
 | **accept** | `string` |  | [Optional] [Defaults to `&#39;application/json&#39;`] |
+| **grantType** | `refresh_token` |  | [Optional] [Defaults to `undefined`] [Enum: refresh_token] |
+| **code** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **redirectUri** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **clientId** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **codeVerifier** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **refreshToken** | `string` |  | [Optional] [Defaults to `undefined`] |
+| **scope** | `string` | Optional subset of the original grant. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
